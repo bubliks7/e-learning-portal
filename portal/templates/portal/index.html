@@ -10,7 +10,7 @@
     <nav>
         <h2>Portal</h2>
         <ul>
-            <li><a href="{% url 'course_list' course.pk %}">Kursy</a></li>
+            <li><a href="{% url 'course_detail' course.pk %}">{{ course.tytul }}</a></li>
         </ul>
     </nav>
     <header>
