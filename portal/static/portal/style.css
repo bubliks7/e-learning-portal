@@ -66,3 +66,8 @@ header {
     border-radius: 8px;
     margin: 10px;
 }
+
+.courseCard {
+    height: 250px;
+    width: 100%;
+}
