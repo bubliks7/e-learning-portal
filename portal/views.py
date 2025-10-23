@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from .models import Kursy
 
 def mainWeb(request):
-    return render(request, 'main/index.html',)
+    return render(request, 'portal/index.html',)
 
 def course_list(request):
     courses = Kursy.objects.all()
