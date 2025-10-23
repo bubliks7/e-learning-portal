@@ -3,7 +3,8 @@ from django.contrib.auth.decorators import login_required
 from .models import Kursy
 
 def home(request):
-    return render(request, 'portal/index.html')
+    new_courses = Kursy.objects.order_by('-data_utworzenia')[:3]
+    return render(request, 'portal/index.html', {'new_courses': new_courses})
 
 def course_list(request):
     courses = Kursy.objects.all()

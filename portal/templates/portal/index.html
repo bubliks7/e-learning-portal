@@ -10,11 +10,25 @@
     <nav>
         <h2>Portal</h2>
         <ul>
-            <li><a class="btn" href="{% url 'course_list' %}">Zobacz kursy</a></li>
+            <li><a href="{% url 'home' %}">Strona główna</a></li>
+            <li><a href="{% url 'course_list' %}">Wszystkie Kursy</a></li>
         </ul>
     </nav>
     <header>
-
+        <h1>Portal e-learningowy</h1>
+        <a href="{% url 'course_list' %}">Zobacz wszystkie Kursy</a>
     </header>
+
+    <section class="new_courses">
+        <h2>Najnowsze kursy</h2>
+        <div>
+            {% for course in new_courses %}
+            <div>
+                <h3>{{ Kursy.tytul }}</h3>
+                <p>{{ Kursy.opis }}</p>
+                <a href="{% url 'course_list' %}">Wszystkie Kursy</a>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
