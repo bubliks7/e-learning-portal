@@ -7,6 +7,11 @@
     font-family: 'Poppins', sans-serif;
 }
 
+body {
+    height: 100vh;
+    background-color: #F4F4F4;
+}
+
 nav {
     display: flex;
     align-items: center;
@@ -44,4 +49,20 @@ nav ul li:hover a {
 
 nav ul li:last-child a {
     margin: 0;
+}
+
+header {
+    text-align: center;
+}
+
+.new_courses {
+    text-align: center;
+}
+
+.new_courses .courseFor {
+    border: 2px solid black;
+}
+
+.new_courses .courseCard {
+    border: 2px solid red;
 }

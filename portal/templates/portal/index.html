@@ -21,9 +21,9 @@
 
     <section class="new_courses">
         <h2>Najnowsze kursy</h2>
-        <div>
+        <div class="courseFor">
             {% for course in new_courses %}
-            <div>
+            <div class="courseCard">
                 <h2>{{ course.tytul }}</h2>
                 <p>{{ course.opis }}</p>
                 <a href="{% url 'course_list' %}">Wszystkie Kursy</a>
