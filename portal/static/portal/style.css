@@ -63,14 +63,13 @@ header {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    height: 23.15vh;
     border: 2px solid black;
     border-radius: 8px;
     margin: 10px;
 }
 
 .courseCard {
-    display: flex;
-    align-items: center;
     height: 250px;
     width: 100%;
 }
