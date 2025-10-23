@@ -6,9 +6,6 @@ def home(request):
     new_courses = Kursy.objects.order_by('-data_utworzenia')[:3]
     return render(request, 'portal/index.html', {'new_courses': new_courses})
 
-def login_user(request):
-    return render(request, 'authenticate/login.html', {})
-
 def course_list(request):
     courses = Kursy.objects.all()
     return render(request, 'portal/course_list.html', {'courses': courses})
