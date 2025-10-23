@@ -1,0 +1,8 @@
+<h1>Dostępne kursy</h1>
+<ul>
+    {% for course in courses %}
+        <li>
+            <a href="{% url 'course_detail' course.pk %}">{{ course.tytul }}</a>
+        </li>
+    {% endfor %}
+</ul>
