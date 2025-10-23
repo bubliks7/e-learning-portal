@@ -57,10 +57,10 @@ header {
 
 .new_courses {
     text-align: center;
-    display: flex;
 }
 
 .new_courses .courseFor {
+    display: flex;
     border: 2px solid black;
     border-radius: 8px;
     margin: 10px;
