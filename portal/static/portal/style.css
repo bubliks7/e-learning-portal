@@ -61,7 +61,7 @@ header {
 
 .new_courses .courseFor {
     display: flex;
-    justify-content: stretch;
+    justify-content: space-evenly;
     border: 2px solid black;
     border-radius: 8px;
     margin: 10px;
