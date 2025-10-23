@@ -1,9 +1,30 @@
-<h1>Dostępne kursy</h1>
-<ul>
-    {% for course in courses %}
-        <li>
-            <a href="{% url 'course_detail' course.pk %}">{{ course.tytul }}</a>
-        </li>
-    {% endfor %}
-</ul>
-<a href="{% url 'home' %}">Wróć</a
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Kursy</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'portal/style.css' %}">
+</head>
+<body>
+    <nav>
+        <h2>Portal</h2>
+        <a href="{% url 'home' %}">Strona główna</a>
+    </nav>
+
+    <main>
+        <h1>Dostępne kursy</h1>
+        <div class="courses-container">
+            {% for course in courses %}
+                <div class="course-card">
+                    <h2>{{ course.tytul }}</h2>
+                    <p>{{ course.opis|truncatewords:20 }}</p>
+                    <a class="btn" href="{% url 'course_detail' course.pk %}">Zobacz więcej</a>
+                </div>
+            {% empty %}
+                <p>Brak dostępnych kursów 😢</p>
+            {% endfor %}
+        </div>
+    </main>
+</body>
+</html>

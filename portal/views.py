@@ -2,8 +2,8 @@ from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .models import Kursy
 
-def home(request):
-    return render(request, 'portal/index.html')
+# def home(request):
+#     return render(request, 'portal/index.html')
 
 def course_list(request):
     courses = Kursy.objects.all()
