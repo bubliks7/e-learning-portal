@@ -82,3 +82,7 @@ header {
     background-color: #007BFF;
     color: rgb(255, 255, 255);
 }
+
+.courseCard p {
+    margin: 10px;
+}
