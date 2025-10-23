@@ -17,8 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls import include, path
+from portal import urls
 
 urlpatterns = [
-    path('courses/', include('app.urls')),
+    path('courses/', include('portal.urls')),
+    path('', include('portal.urls')), 
     path('admin/', admin.site.urls),
 ]
