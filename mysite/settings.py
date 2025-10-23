@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['194.110.4.100']
 # Application definition
 
 INSTALLED_APPS = [
+    'app',
     "app.apps.AppConfig",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -40,7 +41,6 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    'portal',
 ]
 
 MIDDLEWARE = [
