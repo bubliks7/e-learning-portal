@@ -19,7 +19,14 @@
     <main>
         {{ course.tytul }}
         {{ course.opis }}
-        {{ course.pk }}
+    {% if user.is_authenticated %}
+        <form action="{% url 'enroll' Kursy.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Zapisz się na kurs</button>
+        </form>
+    {% else %}
+        <p><a href="{% url 'login' %}">Zaloguj się</a>, aby zapisać się na kurs.</p>
+    {% endif %}
     </main>
 </body>
 </html>

@@ -1,5 +1,6 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from .models import Course, Enrollment
 from .models import Kursy
 
 def home(request):
@@ -13,3 +14,9 @@ def course_list(request):
 def course_detail(request, pk):
     course = get_object_or_404(Kursy, pk=pk)
     return render(request, 'portal/course_detail.html', {'course': course})
+
+@login_required(login_url='/login/')
+def enroll_in_course(request, pk):
+    course = get_object_or_404(Kursy, pk=pk)
+    Enrollment.objects.create(user=request.user, course=course)
+    return redirect('course_detail', pk=pk)

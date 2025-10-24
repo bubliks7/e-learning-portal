@@ -19,6 +19,7 @@ class Kursy(models.Model):
     id = models.AutoField(primary_key=True)
     tytul = models.CharField(max_length=200)
     opis = models.TextField()
+    szczegolowe_informacje = models.TextField()
     autor = models.ForeignKey(Uzytkownicy, on_delete=models.CASCADE, related_name='kursy')
     data_utworzenia = models.DateTimeField(auto_now_add=True)
     def __str__(self):
