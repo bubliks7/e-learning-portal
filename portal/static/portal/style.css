@@ -86,3 +86,9 @@ header {
 .courseCard p {
     margin: 10px;
 }
+
+.courses-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px;
+}
