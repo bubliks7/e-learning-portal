@@ -52,7 +52,10 @@ nav ul li:last-child a {
 }
 
 main {
+    text-align: center;
+}
+
+courses-container {
     display: flex;
     justify-content: center;
-    text-align: center;
 }
