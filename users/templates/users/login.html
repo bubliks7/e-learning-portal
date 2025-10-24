@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Zaloguj się
+{% endblock %}
+
+{% block content %}
+    <h1>Zaloguj się</h1>
+    <form action="/users/login/" method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <button>Zaloguj</button>
+    </form>
+{% endblock %}
