@@ -16,6 +16,8 @@ def course_detail(request, pk):
 
 @login_required(login_url='/login/')
 def enroll_in_course(request, pk):
-    course = get_object_or_404(Kursy, pk=pk)
-    Enrollment.objects.create(user=request.user, course=course)
+    try:
+        course = get_object_or_404(Kursy, pk=pk)
+    except:
+        pass
     return redirect('course_detail', pk=pk)
