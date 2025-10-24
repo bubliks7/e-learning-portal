@@ -51,6 +51,10 @@ nav ul li:last-child a {
     margin: 0;
 }
 
+main {
+    text-align: center;
+}
+
 .courses-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
