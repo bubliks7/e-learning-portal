@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Kursy
 from django.contrib.auth.decorators import login_required
+from .models import Kursy
 
 def home(request):
     new_courses = Kursy.objects.order_by('-data_utworzenia')[:3]
@@ -13,7 +13,3 @@ def course_list(request):
 def course_detail(request, pk):
     course = get_object_or_404(Kursy, pk=pk)
     return render(request, 'portal/course_detail.html', {'course': course})
-
-# @login_required(login_url="/users/login/")
-# def new_portal(request):
-#     return render(request, 'portal/new_portal.html')
