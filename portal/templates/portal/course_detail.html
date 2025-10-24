@@ -17,16 +17,10 @@
     </nav>
 
     <main>
+        <h2>Szegóły kursu</h2>
         {{ course.tytul }}
         {{ course.opis }}
-    {% if user.is_authenticated %}
-        <form action="{% url 'enroll' Kursy.id %}" method="post">
-            {% csrf_token %}
-            <button type="submit">Zapisz się na kurs</button>
-        </form>
-    {% else %}
-        <p><a href="{% url 'login' %}">Zaloguj się</a>, aby zapisać się na kurs.</p>
-    {% endif %}
+        <button class="btn">Zapisz się</button>
     </main>
 </body>
 </html>
