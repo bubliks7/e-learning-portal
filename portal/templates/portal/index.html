@@ -14,10 +14,11 @@
             <li><a href="/courses">Wszystkie Kursy</a></li>
             <li><a href="{% url 'users:register_view' %}">Zarejestruj sie</a></li>
             <li><a href="{% url 'users:login_view' %}">Zaloguj się</a></li>
-            <form class="logout" action="{% url 'users:logout_view' %}" method="POST">
+            <li><a href="{% url 'portal:new_portal' %}">nowy portal</a></li>
+            <li><form class="logout" action="{% url 'users:logout_view' %}" method="POST">
                 {% csrf_token %}
                 <button class="logout-btn">Wyloguj się</button>
-            </form>
+            </form></li>
         </ul>
     </nav>
     <header>
