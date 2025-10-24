@@ -21,7 +21,7 @@ from portal import urls
 from users import urls
 
 urlpatterns = [
-    path('', include('portal.urls')), 
+    path('', include('portal.urls')),
     path('courses/', include('portal.urls')),
     path('admin/', admin.site.urls),
     path('users/', include('users.urls')),

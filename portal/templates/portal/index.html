@@ -14,7 +14,7 @@
             <li><a href="/courses">Wszystkie Kursy</a></li>
             <li><a href="{% url 'users:register_view' %}">Zarejestruj sie</a></li>
             <li><a href="{% url 'users:login_view' %}">Zaloguj się</a></li>
-            <li><a href="{% url 'course_list' %}">Nowy portal</a></li>
+            <li><a href="/courses">Nowy portal</a></li>
             <li><form class="logout" action="{% url 'users:logout_view' %}" method="POST">
                 {% csrf_token %}
                 <button class="logout-btn">Wyloguj się</button>
