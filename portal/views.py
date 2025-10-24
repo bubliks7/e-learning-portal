@@ -14,6 +14,6 @@ def course_detail(request, pk):
     course = get_object_or_404(Kursy, pk=pk)
     return render(request, 'portal/course_detail.html', {'course': course})
 
-@login_required(login_url="/users/login/")
-def new_portal(request):
-    return render(request, 'portal/new_portal.html')
+# @login_required(login_url="/users/login/")
+# def new_portal(request):
+#     return render(request, 'portal/new_portal.html')
