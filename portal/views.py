@@ -14,10 +14,10 @@ def course_detail(request, pk):
     course = get_object_or_404(Kursy, pk=pk)
     return render(request, 'portal/course_detail.html', {'course': course})
 
-@login_required(login_url='/login/')
-def enroll_in_course(request, pk):
-    try:
-        course = get_object_or_404(Kursy, pk=pk)
-    except:
-        pass
-    return redirect('course_detail', pk=pk)
+# @login_required(login_url='/login/')
+# def enroll_in_course(request, pk):
+#     try:
+#         course = get_object_or_404(Kursy, pk=pk)
+#     except:
+#         pass
+#     return redirect('course_detail', pk=pk)
