@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <title>Kursy</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'portal/style.css' %}">
+    <link rel="stylesheet" href="{% static 'portal/kursy.css' %}">
 </head>
 <body>
     <nav>
         <h2>Portal</h2>
-        <a href="/">Strona główna</a>
+        <ul>
+            <li><a href="/">Strona główna</a></li>
+            <li><a href="{% url 'users:register_view' %}">Zarejestruj się</a></li>
+        </ul>
+
     </nav>
 
     <main>
