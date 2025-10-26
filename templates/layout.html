@@ -9,7 +9,9 @@
         
         {% endblock %}
     </title>
-    <link rel="stylesheet" href="{% static "css/style.css" %} %}">
+    {% block static %}
+
+    {% endblock %}
 </head>
 
 <body>

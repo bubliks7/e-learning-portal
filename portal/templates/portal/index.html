@@ -4,6 +4,11 @@
     Strona główna
 {% endblock %}
 
+{% block static %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'portal/style.css' %}"
+{% endblock %}
+
 {% block content %}
     <header>
         <h1>Portal e-learningowy</h1>
