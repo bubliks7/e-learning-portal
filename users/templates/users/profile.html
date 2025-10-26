@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Profil użytkownika {{  }}
+{% endblock %}
+
+{% block static %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'portal/kursy.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h2>Szegóły kursu</h2>
+        {{ course.tytul }}
+        {{ course.opis }}
+        <button class="btn">Zapisz się</button>
+{% endblock %}
