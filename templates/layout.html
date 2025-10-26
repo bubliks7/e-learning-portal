@@ -14,8 +14,18 @@
 
 <body>
     <nav>
-        <a href="/">Strona główna</a>
-        <a href="/courses">Kursy</a>
+        <h2>Portal</h2>
+        <ul>
+            <li><a class="tutaj" href="/">Strona główna</a></li>
+            <li><a href="/courses">Wszystkie Kursy</a></li>
+            <li><a href="{% url 'users:register_view' %}">Zarejestruj sie</a></li>
+            <li><a href="{% url 'users:login_view' %}">Zaloguj się</a></li>
+            <li><form class="logout" action="{% url 'users:logout_view' %}" method="POST">
+                {% csrf_token %}
+                <a><button class="logout-btn">Wyloguj się</button></a>
+            </form></li>
+            <li><a href="#">Profil</a></li>
+        </ul>
     </nav>
     <main>
         {% block content %}

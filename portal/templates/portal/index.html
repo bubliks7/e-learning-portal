@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{% comment %} <!DOCTYPE html>
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
@@ -6,8 +6,8 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'portal/style.css' %}">
 </head>
-<body>
-    <nav>
+<body> {% endcomment %}
+    {% comment %} <nav>
         <h2>Portal</h2>
         <ul>
             <li><a class="tutaj" href="/">Strona główna</a></li>
@@ -20,12 +20,39 @@
             </form></li>
             <li><a href="#">Profil</a></li>
         </ul>
-    </nav>
+    </nav> {% endcomment %}
+    {% comment %} <header>
+        <h1>Portal e-learningowy</h1>
+        <a href="{% url 'course_list' %}">Zobacz wszystkie Kursy</a>
+    </header> {% endcomment %}
+
+    {% comment %} <section class="new_courses">
+        <h2>Najnowsze kursy</h2>
+        <div class="courses-container">
+            {% for course in new_courses %}
+            <div class="course-card">
+                <h2>{{ course.tytul }}</h2>
+                <p>{{ course.opis }}</p>
+                <a class="btn" href="#">Zapisz się</a>
+            </div>
+            {% endfor %}
+        </div>
+    </section> {% endcomment %}
+{% comment %} </body>
+</html> {% endcomment %}
+
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Strona główna
+{% endblock %}
+
+{% block content %}
     <header>
         <h1>Portal e-learningowy</h1>
         <a href="{% url 'course_list' %}">Zobacz wszystkie Kursy</a>
     </header>
-
     <section class="new_courses">
         <h2>Najnowsze kursy</h2>
         <div class="courses-container">
@@ -38,5 +65,4 @@
             {% endfor %}
         </div>
     </section>
-</body>
-</html>
+{% endblock %}
