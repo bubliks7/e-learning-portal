@@ -26,5 +26,5 @@ def login_view(request):
 def logout_view(request):
     if request.method == "POST":
         logout(request)
-        return render(request, 'warning.html')
-    return redirect("/")
+        return render(request, 'users/warning.html')
+    # return redirect("/")
