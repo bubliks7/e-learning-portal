@@ -8,13 +8,12 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'portal/style.css' %}">
 {% endblock %}
-<p>Test: {{ test }}</p>
 {% block content %}
-    <h3>Imię: {{ uzytkownik.imie }}</h3>
-    <h3>Nazwisko: {{ uzytkownik.nazwisko }}</h3>
-    <h3>Email: {{ uzytkownik.email }}</h3>
-    <h3>Hasło: {{ uzytkownik.haslo }}</h3>
-    <h3>Status: {{ uzytkownik.status_uzytkownika }}</h3>
-    <h3>Data rejestracji: {{ uzytkownik.data_rejestracji }}</h3>
-    <h3>Potwierdzony email: {{ uzytkownik.potwierdzony_email }}</h3>
+    <h3>Imię: {{ profil.imie }}</h3>
+    <h3>Nazwisko: {{ profil.nazwisko }}</h3>
+    <h3>Email: {{ profil.email }}</h3>
+    <h3>Hasło: {{ profil.haslo }}</h3>
+    <h3>Status: {{ profil.status_uzytkownika }}</h3>
+    <h3>Data rejestracji: {{ profil.data_rejestracji }}</h3>
+    <h3>Potwierdzony email: {{ profil.potwierdzony_email }}</h3>
 {% endblock %}
