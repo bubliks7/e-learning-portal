@@ -13,3 +13,7 @@ def course_list(request):
 def course_detail(request, pk):
     course = get_object_or_404(Kursy, pk=pk)
     return render(request, 'portal/course_detail.html', {'course': course})
+
+def profile(request, pk):
+    course = get_object_or_404(Kursy, pk=pk)
+    return render(request, 'portal/profile.html', {'course': course})

@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Profil użytkownika
+{% endblock %}
+
+{% block static %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'portal/style.css' %}"
+{% endblock %}
+
+{% block content %}
+    <section class="main">
+        {{ imie }}
+        {{ nazwisko }}
+        {{ email }}
+        {{ haslo }}
+        {{ status_uzytkownika }}
+        {{ data_rejestracji }}
+        {{ potwierdzony_email }}
+    </section>
+{% endblock %}

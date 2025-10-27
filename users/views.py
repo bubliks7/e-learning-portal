@@ -27,4 +27,3 @@ def logout_view(request):
     if request.method == "POST":
         logout(request)
         return render(request, 'users/warning.html')
-    # return redirect("/")
