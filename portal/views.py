@@ -16,4 +16,4 @@ def course_detail(request, pk):
 
 @login_required
 def profile(request):
-    return render(request, 'profile.html', {'user': request.user})
+    return render(request, 'portal/profile.html', {'user': request.user})
