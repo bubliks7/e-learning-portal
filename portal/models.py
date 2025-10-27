@@ -13,7 +13,7 @@ class Uzytkownicy(models.Model):
     data_rejestracji = models.DateTimeField(auto_now_add=True)
     potwierdzony_email = models.BooleanField(default=False)
     def __str__(self):
-        return f"{self.imie} {self.nazwisko} ({self.email})"
+        return f"{self.user.first_name} {self.user.last_name} ({self.user.email})"
 
 class Kursy(models.Model):
     id = models.AutoField(primary_key=True)

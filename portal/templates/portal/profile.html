@@ -9,11 +9,9 @@
     <link rel="stylesheet" href="{% static 'portal/style.css' %}">
 {% endblock %}
 {% block content %}
-    <h3>Imię: {{ profil.imie }}</h3>
-    <h3>Nazwisko: {{ profil.nazwisko }}</h3>
-    <h3>Email: {{ profil.email }}</h3>
-    <h3>Hasło: {{ profil.haslo }}</h3>
-    <h3>Status: {{ profil.status_uzytkownika }}</h3>
-    <h3>Data rejestracji: {{ profil.data_rejestracji }}</h3>
-    <h3>Potwierdzony email: {{ profil.potwierdzony_email }}</h3>
+    <h3>{{ profil.user.first_name }}</h3>
+    <h3>{{ profil.user.last_name }}</h3>
+    <h3>{{ profil.user.email }}</h3>
+    <h3>{{ profil.status_uzytkownika }}</h3>
+    <h3>{{ profil.potwierdzony_email }}</h3>
 {% endblock %}

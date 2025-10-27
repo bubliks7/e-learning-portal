@@ -17,5 +17,5 @@ def course_detail(request, pk):
 
 @login_required
 def profile(request):
-    profil = get_object_or_404(Uzytkownicy, email=request.user.email)
+    profil = request.user.uzytkownicy
     return render(request, 'portal/profile.html', {'profil': profil})
