@@ -43,7 +43,7 @@ nav ul li a {
     transition: color 0.2s ease;
 }
 
-nav ul li:hover a {
+nav ul li a:hover {
     color: #007BFF;
 }
 
@@ -52,7 +52,8 @@ nav ul li:last-child a {
 }
 
 nav a i {
-    margin-right: 0.5rem;
+    margin-right: 0.7rem;
+    font-size: 1.5rem;
 }
 
 header {
