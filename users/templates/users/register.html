@@ -4,6 +4,11 @@
     Zarejestruj się
 {% endblock %}
 
+{% block static %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'users/style.css' %}">
+{% endblock %}
+
 {% block content %}
     <h1>Zarejestruj się</h1>
     <form action="/users/register/" method="POST">
