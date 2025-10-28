@@ -29,7 +29,7 @@
             transition: color 0.2s ease;
         }
 
-        nav ul li a i:hover {
+        nav ul li a:hover {
             color: #007BFF;
         }
 
