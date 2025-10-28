@@ -1,38 +1,52 @@
-        nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 80px;
-            padding: 0 40px;
-        }
+       @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-        nav h2 {
-            color: rgb(0, 0, 0);
-            font-weight: 700;
-            margin-right: 6px;
-        }
+       * {
+           padding: 0;
+           margin: 0;
+           box-sizing: border-box;
+           font-family: 'Poppins', sans-serif;
+       }
 
-        nav ul {
-            display: flex;
-        }
+       body {
+           height: 100vh;
+           background-color: #F4F4F4;
+       }
 
-        nav ul li {
-            list-style: none;
-        }
+       nav {
+           display: flex;
+           align-items: center;
+           justify-content: space-between;
+           height: 80px;
+           padding: 0 40px;
+       }
 
-        nav ul li a {
-            text-decoration: none;
-            color: #000000;
-            font-weight: 600;
-            font-size: 2rem;
-            margin-right: 1rem;
-            transition: color 0.2s ease;
-        }
+       nav h2 {
+           color: rgb(0, 0, 0);
+           font-weight: 700;
+           margin-right: 6px;
+       }
 
-        nav i:hover {
-            color: #007BFF;
-        }
+       nav ul {
+           display: flex;
+       }
 
-        nav ul li:last-child a {
-            margin: 0;
-        }
+       nav ul li {
+           list-style: none;
+       }
+
+       nav ul li a {
+           text-decoration: none;
+           color: #000000;
+           font-weight: 600;
+           font-size: 2rem;
+           margin-right: 1rem;
+           transition: color 0.2s ease;
+       }
+
+       nav i:hover {
+           color: #007BFF;
+       }
+
+       nav ul li:last-child a {
+           margin: 0;
+       }
