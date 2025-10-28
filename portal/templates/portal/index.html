@@ -4,10 +4,10 @@
     Strona główna
 {% endblock %}
 
-{% block static %}
+{% comment %} {% block static %}
     {% load static %}
     <link rel="stylesheet" href="{% static 'portal/style.css' %}"
-{% endblock %}
+{% endblock %} {% endcomment %}
 
 {% block content %}
     <header>

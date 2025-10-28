@@ -4,10 +4,10 @@
     Kursy
 {% endblock %}
 
-{% block static %}
+{% comment %} {% block static %}
     {% load static %}
     <link rel="stylesheet" href="{% static 'portal/kursy.css' %}">
-{% endblock %}
+{% endblock %} {% endcomment %}
 
 {% block content %}
     <h1>Dostępne kursy</h1>
