@@ -10,23 +10,24 @@
         {% endblock %}
     </title>
     {% block static %}
-    
+
     {% endblock %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 
 <body>
     <nav>
         <h2>Portal</h2>
         <ul>
-            <li><a class="tutaj" href="/">Strona główna</a></li>
-            <li><a href="/courses">Wszystkie Kursy</a></li>
-            <li><a href="{% url 'users:register_view' %}">Zarejestruj sie</a></li>
-            <li><a href="{% url 'users:login_view' %}">Zaloguj się</a></li>
+            <li><a class="tutaj" href="/"><i class="fa-solid fa-house"></i></a></li>
+            <li><a href="/courses"><i class="fa-solid fa-book"></i></a></li>
+            <li><a href="{% url 'users:register_view' %}"><i class="fas fa-user-plus"></i></a></li>
+            <li><a href="{% url 'users:login_view' %}"><i class="fas fa-sign-in-alt"></i></a></li>
             <li><form class="logout" action="{% url 'users:logout_view' %}" method="POST">
                 {% csrf_token %}
-                <a><button class="logout-btn">Wyloguj się</button></a>
+                <a><button class="logout-btn"><i class="fas fa-sign-out-alt"></i></button></a>
             </form></li>
-            <li><a href="/accound">Profil</a></li>
+            <li><a href="/accound"><i class="fas fa-user"></i></a></li>
         </ul>
     </nav>
     <main>
