@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="{% static 'portal/style.css' %}">
 {% endblock %}
 {% block content %}
-    <h2>{{ accound.imie }}</h2>
-    <h2>{{ accound.nazwisko }}</h2>
+    {% for user in accound %}
+        <h2>{{ user.imie }}</h2>
+        <h2>{{ user.nazwisko }}</h2>
+    {% empty %}
+        <p>Brak użytkowników w bazie danych.</p>
+    {% endfor %}
 {% endblock %}

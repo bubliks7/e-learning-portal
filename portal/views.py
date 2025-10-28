@@ -17,4 +17,5 @@ def course_detail(request, pk):
 
 @login_required
 def accound(request):
-    return render(request, 'portal/profile.html', {'accound': request.user})
+    accound = request.user
+    return render(request, 'portal/profile.html', {'accound': accound})
