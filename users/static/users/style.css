@@ -10,6 +10,7 @@
        body {
            height: 100vh;
            background-color: #F4F4F4;
+           text-align: center;
        }
 
        nav {
@@ -49,8 +50,4 @@
 
        nav ul li:last-child a {
            margin: 0;
-       }
-
-       .login_form {
-           text-align: center;
        }
