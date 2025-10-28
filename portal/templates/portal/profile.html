@@ -9,10 +9,9 @@
     <link rel="stylesheet" href="{% static 'portal/style.css' %}">
 {% endblock %}
 {% block content %}
-    {% for user in accound %}
-        <h2>{{ user.imie }}</h2>
-        <h2>{{ user.nazwisko }}</h2>
-    {% empty %}
-        <p>Brak użytkowników w bazie danych.</p>
-    {% endfor %}
+    <h2>Profil użytkownika</h2>
+    <p><strong>Login:</strong> {{ user.username }}</p>
+    <p><strong>Imię:</strong> {{ user.first_name }}</p>
+    <p><strong>Nazwisko:</strong> {{ user.last_name }}</p>
+    <p><strong>Email:</strong> {{ user.email }}</p>
 {% endblock %}
