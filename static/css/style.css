@@ -38,8 +38,8 @@
            text-decoration: none;
            color: #000000;
            font-weight: 600;
-           font-size: 2rem;
-           margin-right: 1rem;
+           font-size: 1rem;
+           margin-right: 0.6rem;
            transition: color 0.2s ease;
        }
 

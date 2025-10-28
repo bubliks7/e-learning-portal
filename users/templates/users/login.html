@@ -11,7 +11,7 @@
 
 {% block content %}
     <h1>Zaloguj się</h1>
-    <form action="/users/login/" method="POST">
+    <form class="login_form" action="/users/login/" method="POST">
         {% csrf_token %}
         {{ form }}
         <button>Zaloguj</button>
