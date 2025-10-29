@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout
 from django.contrib.auth.views import LoginView
-from .forms import loginForm
+from .forms import registerForm
 
 # Create your views here.
 # def register_view(request):
@@ -30,6 +30,6 @@ def logout_view(request):
         logout(request)
         return render(request, 'users/warning.html')
 
-class loginForm(LoginView):
+class registerForm(LoginView):
     template = 'users/register.html'
-    authentication_form = loginForm
+    authentication_form = registerForm
