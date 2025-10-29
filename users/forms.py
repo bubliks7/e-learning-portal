@@ -12,4 +12,4 @@ class loginForm(AuthenticationForm):
         self.fields['password'].widget.attrs.update({'class': 'form-control'})
         self.fields['imie'].widget.attrs.update({'class': 'form-control'})
         self.fields['nazwisko'].widget.attrs.update({'class': 'form-control'})
-        self.fields['e_mail'].widget.attrs.update({'class': 'form-control'})
+        self.fields['email'].widget.attrs.update({'class': 'form-control'})
