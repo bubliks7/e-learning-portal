@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout
-from django.contrib.auth.views import LoginView
-from .forms import loginForm
+# from django.contrib.auth.views import LoginView
+# from .forms import loginForm
 
 # Create your views here.
 def register_view(request):
