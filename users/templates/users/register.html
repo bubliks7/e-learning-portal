@@ -13,7 +13,8 @@
     <h1>Zarejestruj się</h1>
     <form action="/users/register/" method="POST">
         {% csrf_token %}
-        {{ form }}
+        {{ form.as_p }}
+        {% comment %} {{ form }} {% endcomment %}
         <button class="btn">Submit</button>
     </form>
 {% endblock %}

@@ -1,7 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .models import Kursy
-from portal.models import Uzytkownicy
 
 def home(request):
     new_courses = Kursy.objects.order_by('-data_utworzenia')[:3]
@@ -19,3 +18,4 @@ def course_detail(request, pk):
 def accound(request):
     user = request.user
     return render(request, 'portal/profile.html', {'user': user})
+
