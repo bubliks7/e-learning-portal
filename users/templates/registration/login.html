@@ -13,7 +13,8 @@
     <h1>Zaloguj się</h1>
     <form class="login_form" action="/users/login/" method="POST">
         {% csrf_token %}
-        {{ form }}
+        {{ form.as_p }}
+        {% comment %} {{ form }} {% endcomment %}
         <button class="btn">Zaloguj</button>
     </form>
 {% endblock %}
