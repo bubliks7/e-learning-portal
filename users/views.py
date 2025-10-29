@@ -5,15 +5,15 @@ from django.contrib.auth.views import LoginView
 from .forms import loginForm
 
 # Create your views here.
-# def register_view(request):
-#     if request.method == "POST":
-#         form = UserCreationForm(request.POST)
-#         if form.is_valid():
-#             login(request, form.save())
-#             return redirect("/")
-#     else:
-#         form = UserCreationForm()
-#     return render(request, "users/register.html", { "form": form })
+def register_view(request):
+    if request.method == "POST":
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            login(request, form.save())
+            return redirect("/")
+    else:
+        form = UserCreationForm()
+    return render(request, "users/register.html", { "form": form })
 
 def login_view(request):
     if request.method == "POST":
@@ -30,6 +30,7 @@ def logout_view(request):
         logout(request)
         return render(request, 'users/warning.html')
 
-class loginForm(LoginView):
-    template = 'users/register.html'
-    authentication_form = loginForm
+# class loginForm(LoginView):
+#     template = 'users/register.html'
+#     authentication_form = loginForm
+    
