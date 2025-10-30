@@ -11,10 +11,10 @@
 {% block content %}
 <h2>Rejestracja</h2>
 
-<form method="post">
+<form class="register_form" method="post">
   {% csrf_token %}
   {{ form.as_p }}
-  <button type="submit">Zarejestruj się</button>
+  <button class="btn" type="submit">Zarejestruj się</button>
 </form>
 
 {% if messages %}

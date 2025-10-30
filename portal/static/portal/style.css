@@ -125,3 +125,7 @@ header a {
     font-weight: bold;
     padding: 5px;
 }
+
+.register_form {
+    margin: 2rem;
+}
