@@ -10,7 +10,6 @@
        body {
            height: 100vh;
            background-color: #F4F4F4;
-           text-align: center;
        }
 
        nav {
@@ -50,20 +49,4 @@
 
        nav ul li:last-child a {
            margin: 0;
-       }
-
-       .btn {
-           display: inline-block;
-           background-color: #007bff;
-           color: white;
-           padding: 10px 16px;
-           border-radius: 6px;
-           margin: 15px;
-           text-decoration: none;
-           cursor: pointer;
-           transition: background-color 0.2s;
-       }
-
-       .btn:hover {
-           background-color: #0056b3;
        }
