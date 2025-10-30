@@ -6,13 +6,14 @@
 
 {% block static %}
     {% load static %}
-    <link rel="stylesheet" href="{% static 'portal/style.css' %}">
+    <link href="https://unpkg.com/tailwindcss@1.9.6/dist/tailwind.min.css" rel="stylesheet">
 {% endblock %}
 {% block content %}
-    <h2>Profil użytkownika</h2>
-    <p>Login: {{ user.username }}</p>
-    <p>Imię: {{ user.first_name }}</p>
-    <p>Nazwisko: {{ user.last_name }}</p>
-    <p>Email: {{ user.email }}</p>
-    <p>status_uzytkownika: {{ user.status_uzytkownika }}</p>
+    <section>
+        <h2 class="text-3xl font-bold underline text-green-600">Profil użytkownika</h2>
+        <p>Login: {{ user.username }}</p>
+        <p>Imię: {{ user.first_name }}</p>
+        <p>Nazwisko: {{ user.last_name }}</p>
+        <p>Email: {{ user.email }}</p>
+    </section>
 {% endblock %}
