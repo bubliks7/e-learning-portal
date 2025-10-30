@@ -30,4 +30,4 @@ def register(request):
             return redirect('/users/login/')
     else:
         form = RejestracjaForm()
-    return render(request, 'register.html', {'form': form})
+    return render(request, 'portal/register.html', {'form': form})
