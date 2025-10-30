@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Wyglogowano
+{% endblock %}
+
+{% block static %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'users/style.css' %}">
+{% endblock %}
+
+{% block content %}
+<h1>Zaloguj sie</h1>
+<form method="post">
+  {% csrf_token %}
+  {{ form }}
+  <button type="submit">Zaloguj</button>
+</form>
+{% endblock %}
