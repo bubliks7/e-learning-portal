@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout
-from django.contrib import messages
-from .forms import RejestracjaForm
+# from django.contrib.auth.views import LoginView
+# from .forms import loginForm
 
 # Create your views here.
 # def register_view(request):
@@ -29,14 +29,8 @@ def logout_view(request):
     if request.method == "POST":
         logout(request)
         return render(request, 'users/warning.html')
+
+# class loginForm(LoginView):
+#     template = 'users/register.html'
+#     authentication_form = loginForm
     
-def rejestracja(request):
-    if request.method == "POST":
-        form = RejestracjaForm(request.POST)
-        if form.is_valid():
-            form.save()
-            messages.success(request, "Utworzono konto")
-            return redirect('login')
-    else:
-        form = RejestracjaForm()
-    return render(request, 'register.html', {'form': form})
