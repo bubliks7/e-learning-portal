@@ -1,20 +1,19 @@
 {% extends "layout.html" %}
-
 {% block title %}
     Zarejestruj się
 {% endblock %}
-
-{% block static %}
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'users/style.css' %}">
-{% endblock %}
-
 {% block content %}
-    <h1>Zarejestruj się</h1>
-    <form action="/users/register/" method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        {% comment %} {{ form }} {% endcomment %}
-        <button class="btn">Submit</button>
-    </form>
+<h2>Rejestracja</h2>
+
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Zarejestruj się</button>
+</form>
+
+{% if messages %}
+  {% for message in messages %}
+    <p>{{ message }}</p>
+  {% endfor %}
+{% endif %}
 {% endblock %}

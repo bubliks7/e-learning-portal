@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from .models import Kursy
 
@@ -19,3 +19,10 @@ def accound(request):
     user = request.user
     return render(request, 'portal/profile.html', {'user': user})
 
+# def rejestracja(request):
+#     if request.method == "POST":
+#         form = RejestracjaForm(request.POST)
+#         if form.is_valid():
+#             form.save()
+#             messages.success(request, "Utworzono konto")
+#             return redirect('login')
