@@ -9,12 +9,12 @@
     <link href="https://unpkg.com/tailwindcss@1.9.6/dist/tailwind.min.css" rel="stylesheet">
 {% endblock %}
 {% block content %}
-    <section>
+    <div class="min-h-screen flex items-center justify-center">
         <h2 class="text-3xl font-bold underline text-green-600">Profil użytkownika</h2>
         <p>Login: {{ user.username }}</p>
         <p>Imię: {{ user.first_name }}</p>
         <p>Nazwisko: {{ user.last_name }}</p>
         <p>Email: {{ user.email }}</p>
         <p>Status: {{ uzytkownik.status_uzytkownika }}</p>
-    </section>
+    </div>
 {% endblock %}
