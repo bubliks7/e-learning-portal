@@ -27,7 +27,7 @@ def register(request):
         if form.is_valid():
             form.save()
             messages.success(request, "Utworzono konto")
-            return redirect('/accound/')
+            return redirect('/users/login/')
     else:
         form = RejestracjaForm()
     return render(request, 'register.html', {'form': form})
