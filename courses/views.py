@@ -11,3 +11,6 @@ def enroll_course(request, kurs_id):
     # return redirect('course_detail', pk=kurs.id)
     return render(request, 'portal/zapisano.html', {'kurs': kurs})
 
+def enroll_view(request):
+    courses = Kursy.objects.all()
+    return render(request, 'portal/zapisane_kursy.html', {'courses': courses})

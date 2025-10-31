@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Twoje kursy
+{% endblock %}
+
+{% block static %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'portal/style.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h1>Twoje kursy</h1>
+    <br>
+    <p><strong>{{ kurs.tytul }}</strong></p>
+    <br>
+    <p><strong>{{ kurs.autor }}</strong></p>
+    <br>
+    <p><strong>{{ kurs.opis }}</strong></p>
+    <br>
+{% endblock %}
