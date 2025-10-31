@@ -1,5 +1,5 @@
 from django.db import models
-from .models import Uzytkownicy
+from portal.models import Uzytkownicy
 # Create your models here.
 
 class Kursy(models.Model):
