@@ -11,11 +11,13 @@
 
 {% block content %}
     <h1>Twoje kursy</h1>
-    <br>
-    <p><strong>{{ kurs.tytul }}</strong></p>
-    <br>
-    <p><strong>{{ kurs.autor }}</strong></p>
-    <br>
-    <p><strong>{{ kurs.opis }}</strong></p>
-    <br>
+
+    <div class="min-h-screen flex items-center justify-center">
+    <div class="bg-white p-8 rounded-2xl">
+        <h1 class="text-2xl font-bold mb-6 text-gray-800">{{ course.tytul }}</h1>
+            <p>{{ course.opis }}</p>
+        </form>
+    </div>
+</div>
+    
 {% endblock %}
