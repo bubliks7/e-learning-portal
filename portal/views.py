@@ -8,13 +8,13 @@ def home(request):
     new_courses = Kursy.objects.order_by('-data_utworzenia')[:3]
     return render(request, 'portal/index.html', {'new_courses': new_courses})
 
-# def course_list(request):
-#     courses = Kursy.objects.all()
-#     return render(request, 'portal/course_list.html', {'courses': courses})
+def course_list(request):
+    courses = Kursy.objects.all()
+    return render(request, 'portal/course_list.html', {'courses': courses})
 
-# def course_detail(request, pk):
-#     course = get_object_or_404(Kursy, pk=pk)
-#     return render(request, 'portal/course_detail.html', {'course': course})
+def course_detail(request, pk):
+    course = get_object_or_404(Kursy, pk=pk)
+    return render(request, 'portal/course_detail.html', {'course': course})
 
 @login_required
 def accound(request):
