@@ -13,4 +13,7 @@
     <h1>Zapisano!</h1>
     <br>
     <a href="/">Strona główna</a>
+    <p>zapisałeś się na kurs: <strong>{{ kurs.tytul }}</strong></p>
+    <br>
+    <a href="{% url 'course_detail' kurs.id %}" class="btn btn-primary">Powrót do kursu</a>
 {% endblock %}
