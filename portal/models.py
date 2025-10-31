@@ -1,12 +1,10 @@
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
-from django.contrib.auth.models import User
 
 # Create your models here.
 
 class Uzytkownicy(models.Model):
     id = models.AutoField(primary_key=True)
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
     imie = models.CharField(max_length=50)
     nazwisko = models.CharField(max_length=60)
     email = models.CharField(max_length=100, unique=True)
