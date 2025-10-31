@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'portal.apps.PortalConfig',
     'users',
+    'courses',
 ]
 
 MIDDLEWARE = [
