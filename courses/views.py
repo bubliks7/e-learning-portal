@@ -11,5 +11,6 @@ def enroll_course(request, kurs_id):
     # return redirect('course_detail', pk=kurs.id)
     return render(request, 'portal/zapisano.html', {'kurs': kurs})
 
-def enroll_view(request):
-    return render(request, 'portal/zapisane_kursy.html')
+def my_courses(request):
+    enrollments = Enrollment.objects.filter(user=request.user)
+    return render(request, 'portal/zapisane_kursy.html', {'enrollments': enrollments})
