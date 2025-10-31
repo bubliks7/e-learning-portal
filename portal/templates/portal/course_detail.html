@@ -16,11 +16,11 @@
         <button class="btn" href="#">Zapisz się</button>
 
         {% if user.is_authenticated %}
-        <form method="post" action="{% url 'enroll_course' Kursy.id %}">
+        <form method="post" action="{% url 'enroll_course' kurs.id %}">
             {% csrf_token %}
             <button type="submit" class="btn btn-primary">Zapisz się na kurs</button>
         </form>
         {% else %}
-        <p><a href="/users/login/">Zaloguj się,</a> aby zapisać się na kurs.</p>
+        <p><a href="{% url 'login' %}">Zaloguj się,</a> aby zapisać się na kurs.</p>
         {% endif %}
 {% endblock %}

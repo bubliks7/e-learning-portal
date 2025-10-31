@@ -1,16 +1,13 @@
 from django.db import models
-from portal.models import Uzytkownicy
-from portal.models import Kursy
-# Create your models here.
+from portal.models import Uzytkownicy, Kursy
 
 class Enrollment(models.Model):
-    uzytkownik = models.ForeignKey(Uzytkownicy, on_delete=models.CASCADE, related_name="enrollment")
-    kurs = models.ForeignKey(Kursy, on_delete=models.CASCADE, related_name="enrollment")
+    uzytkownik = models.ForeignKey(Uzytkownicy, on_delete=models.CASCADE, related_name="enrollments")
+    kurs = models.ForeignKey(Kursy, on_delete=models.CASCADE, related_name="enrollments")
     data_dolaczenia = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         unique_together = ('uzytkownik', 'kurs')
 
     def __str__(self):
-        return f"{self.Uzytkownicy.imie} zapisany na {self.Kursy.tytul}"
-
+        return f"{self.uzytkownik.imie} zapisany na {self.kurs.tytul}"
