@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    kurs sql
+{% endblock %}
+
+{% block static %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'portal/style.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div>
+        {% for course in courses %}
+        <div>
+            <h2>{{ course.tytul }}</h2>
+            <p>{{ course.opis }}</p>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}
