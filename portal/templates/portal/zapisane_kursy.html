@@ -16,13 +16,13 @@
     <div class="bg-white p-8 rounded-2xl">
         <h1 class="text-2xl font-bold mb-6 text-gray-800">{{ course.tytul }}<h1>
             <h2>Moje kursy</h2>
-            <ul class="list-disc pl-6 text-gray-700">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">{{ e.kurs.tytul }}
                 {% for e in enrollments %}
-                    <li class="mb-2">{{ e.kurs.tytul }}</li>
+                    <div>{{ e.kurs.tytul }}</div>
                 {% empty %}
                     <li>Nie jesteś zapisany na żaden kurs.</li>
                 {% endfor %}
-            </ul>
+            </div>
     </div>
 </div>
     
