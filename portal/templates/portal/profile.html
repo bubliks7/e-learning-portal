@@ -17,7 +17,7 @@
         <p>Nazwisko: {{ user.last_name }}</p>
         <p>Email: {{ user.email }}</p>
         <p>Status: {{ uzytkownik.status_uzytkownika }}</p>
-        <p><a href="/">Moje kursy</a></p>
+        <p><a href="{% url 'saved_courses:my_courses' %}">Moje kursy</a></p>
      </div>
     </div>
 {% endblock %}
