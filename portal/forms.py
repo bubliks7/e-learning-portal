@@ -33,7 +33,6 @@ class RejestracjaForm(forms.ModelForm):
             email=self.cleaned_data['email']
         )
         uzytkownik = Uzytkownicy(
-            user = user,
             imie=self.cleaned_data['imie'],
             nazwisko=self.cleaned_data['nazwisko'],
             email=self.cleaned_data['email'],
