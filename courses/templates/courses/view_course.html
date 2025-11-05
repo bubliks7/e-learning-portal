@@ -11,11 +11,7 @@
 
 {% block content %}
     <div>
-        {% for course in courses %}
-        <div>
-            <h2>{{ e.kurs.tytul }}</h2>
-            <p>{{ e.kurs.opis }}</p>
-        </div>
-        {% endfor %}
+        <h2>{{ e.kurs.tytul }}</h2>
+        <p>{{ e.kurs.opis }}</p>
     </div>
 {% endblock %}
