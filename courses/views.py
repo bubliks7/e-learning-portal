@@ -16,5 +16,6 @@ def my_courses(request):
     enrollments = Enrollment.objects.filter(uzytkownik=uzytkownik)
     return render(request, 'portal/zapisane_kursy.html', {'enrollments': enrollments})
 
-def view_course(request):
-    return render(request, 'courses/sql_course.html')
+def view_course(request, pk):
+    course = get_object_or_404(Kursy, pk=pk)
+    return render(request, 'courses/sql_course.html', {'course': course})
