@@ -27,5 +27,5 @@ urlpatterns = [
     path('register/', include('portal.urls')),
     path('enroll/', include(('courses.urls', 'portal'), namespace='portal')),
     path('saved_courses/', include(('courses.urls', 'courses'), namespace='courses')),
-    path('course_sql//', include(('courses.urls', 'courses'), namespace='courses')),
+    path('course_sql/', include(('courses.urls', 'courses'), namespace='courses')),
 ]
