@@ -10,9 +10,11 @@
 {% endblock %}
 
 {% block content %}
-    <div>
-        <h2>{{ course.tytul }}</h2>
-        <p>{{ course.opis }}</p>
-        <p>{{ course.dluzszyOpis }}</p>
+    <div class="flex items-center justify-center min-h-screen">
+        <div class="max-w-xl text-center">
+            <h2>{{ course.tytul }}</h2>
+            <p>{{ course.opis }}</p>
+            <p>{{ course.dluzszyOpis }}</p>
+        </div>
     </div>
 {% endblock %}
