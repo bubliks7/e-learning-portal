@@ -12,9 +12,9 @@
 {% block content %}
     <div class="flex items-center justify-center min-h-screen">
         <div class="max-w-xl text-center">
-            <h1>{{ course.tytul }}</h1>
-            <h3>{{ course.opis }}</h3>
-            <p>{{ course.dluzszyOpis }}</p>
+            <h1 class="text-4xl font-bold mb-4">{{ course.tytul }}</h1>
+            <h3 class="text-2xl font-semibold mb-2">{{ course.opis }}</h3>
+            <p class="text-base text-gray-700">{{ course.dluzszyOpis }}</p>
         </div>
     </div>
 {% endblock %}
