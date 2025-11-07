@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404, render
 from django.contrib.auth.decorators import login_required
-from .models import Enrollment, courseContent
+from .models import Enrollment
 from portal.models import Kursy, Uzytkownicy
 
 @login_required
