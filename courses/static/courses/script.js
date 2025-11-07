@@ -1,9 +1,18 @@
-const go_left = document.querySelector('#go_left');
-const go_right = document.querySelector('#go_right');
-const first_page = document.querySelector('#first_page');
-const main_page = document.querySelector('#main_page');
+const pages = document.querySelectorAll(".page");
+let currentPage = 0;
 
-go_right.addEventListener('click', () => {
-    main_page.style.display = 'none';
-    first_page.style.display = 'block';
-})
+function showPage(index) {
+    pages.forEach((p, i) => {
+        p.style.display = i === index ? "block" : "none";
+    });
+}
+document.getElementById("go_left").addEventListener("click", () => {
+    if (currentPage > 0) currentPage--;
+    showPage(currentPage);
+});
+document.getElementById("go_right").addEventListener("click", () => {
+    if (currentPage < pages.length - 1) currentPage++;
+    showPage(currentPage);
+});
+
+showPage(currentPage);

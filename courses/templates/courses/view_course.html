@@ -12,17 +12,27 @@
 {% block content %}
     <div class="flex items-center justify-center min-h-screen">
         <div class="max-w-xl text-center">
-            <div id="main_page">
+            <div class="page">
                 <h1 class="text-4xl font-bold mb-4">{{ course.tytul }}</h1>
                 <h3 class="text-2xl font-semibold mb-2">{{ course.opis }}</h3>
                 <p class="text-base text-gray-700">{{ course.dluzszyOpis }}</p>
             </div>
-            <div id="mini-menu">
+
+            <div class="page">
+                <p class="text-base text-gray-700">Strona 1 - wprowadzenie do MySQL.</p>
+            </div>
+
+            <div class="page">
+                <p class="text-base text-gray-700">Strona 2 - tworzenie tabel i zapytań.</p>
+            </div>
+
+            <div class="page">
+                <p class="text-base text-gray-700">Strona 3 - relacje i klucze obce.</p>
+            </div>
+
+            <div id="mini-menu" class="mt-4">
                 <button id="go_left">← Poprzednia</button>
                 <button id="go_right">Następna →</button>
-            </div>
-            <div style="display:none;" id="first_page" class="max-w-xl text-center">
-                <p class="text-base text-gray-700">{{ course.dluzszyOpis }}</p>
             </div>
         </div>
 
