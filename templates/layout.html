@@ -21,11 +21,11 @@
             <li><a class="tutaj" href="/"><i class="fa-solid fa-house"></i></a></li>
             <li><a href="/courses"><i class="fa-solid fa-book"></i></a></li>
             <li><a href="{% url 'saved_courses:my_courses' %}">Moje kursy</a></li>
-            <li><a href="{% url 'users:login_view' %}"><i class="fas fa-sign-in-alt"></i></a></li>
+            <li><a href="{% url 'users:login_view' %}">Zaloguj</a></li>
             <li><a href="/register"><i class="fas fa-user-plus"></i></a></li>
             <li><form class="logout" action="{% url 'users:logout_view' %}" method="POST">
                 {% csrf_token %}
-                <a><button class="logout-btn"><i class="fas fa-sign-out-alt"></i></button></a>
+                <a><button class="logout-btn">Wyloguj</button></a>
             </form></li>
             <li><a href="/accound"><i class="fas fa-user"></i></a></li>
         </ul>
