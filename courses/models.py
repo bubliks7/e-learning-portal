@@ -11,8 +11,3 @@ class Enrollment(models.Model):
 
     def __str__(self):
         return f"{self.uzytkownik.imie} zapisany na {self.kurs.tytul}"
-
-class courseContent(models.Model):
-    tytul = models.CharField(max_length=100)
-    rozdzial = models.CharField(max_length=20)
-    tresc = models.TextField()
