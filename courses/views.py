@@ -20,4 +20,6 @@ def view_course(request, pk):
     course = get_object_or_404(Kursy, pk=pk)
     return render(request, 'courses/view_course.html', {'course': course})
 
-
+def content_view(request, pk):
+    content = get_object_or_404(Kursy, pk=pk)
+    return render(request, 'courses/view_course.html', {'content': content})

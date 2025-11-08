@@ -13,8 +13,9 @@ class Enrollment(models.Model):
         return f"{self.uzytkownik.imie} zapisany na {self.kurs.tytul}"
 
 class coursesContent(models.Model):
+    tytul = models.CharField(max_length=100)
+    rozdzial = models.CharField(max_length=25)
     strona_1 = models.TextField()
     strona_2 = models.TextField()
     strona_3 = models.TextField()
     strona_4 = models.TextField()
-    
