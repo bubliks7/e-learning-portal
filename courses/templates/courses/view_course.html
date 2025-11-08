@@ -19,13 +19,27 @@
             </div>
 
             <div class="page">
-                <p class="text-base text-gray-700">{{ course.tresc_kursu }}</p>
+                <p class="text-base text-gray-700">1.1 Czym jest MySQL? MySQL to jeden z najpopularniejszych systemów zarządzania relacyjnymi bazami danych (ang. Relational Database Management System – RDBMS). Jego głównym zadaniem jest przechowywanie, organizowanie i udostępnianie danych w sposób uporządkowany, dzięki czemu można nimi łatwo zarządzać oraz analizować je przy użyciu języka SQL (Structured Query Language). MySQL został opracowany w połowie lat 90. i jest obecnie rozwijany przez firmę Oracle. Jego popularność wynika z kilku kluczowych zalet: jest darmowy (w wersji Community Edition), wydajny i stabilny, łatwy w użyciu, nawet dla początkujących, działa na różnych systemach operacyjnych (Windows, Linux, macOS), współpracuje z wieloma językami programowania (np. PHP, Python, Java). MySQL jest wykorzystywany zarówno w małych projektach, jak i w dużych serwisach internetowych. Przykłady firm korzystających z MySQL to m.in. Facebook, YouTube czy Twitter.</p>
             </div>
 
             <div class="page">
-                <p class="text-base text-gray-700">{{ course.tresc_kursu|safe }}</p>
+                <p class="text-base text-gray-700">1.2 Czym jest baza danych? Baza danych to zorganizowany zbiór informacji, które można łatwo przetwarzać, wyszukiwać i aktualizować. Można ją porównać do cyfrowego archiwum lub arkusza kalkulacyjnego, w którym dane są zapisywane w tabelach. Każda tabela składa się z: kolumn (fields) - które określają typ danych, np. imię, nazwisko, wiek, wierszy (rows) - które reprezentują konkretne rekordy, np. dane jednego użytkownika. Przykład prostej tabeli users: id imię nazwisko wiek 1 Anna Nowak 28 2 Michał Kowalski 34 3 Katarzyna Wiśniewska 22</p>
             </div>
-
+            <div class="page">
+                <p class="text-base text-gray-700">1.3 Czym jest SQL? SQL (Structured Query Language) to język służący do komunikacji z bazą danych. Za jego pomocą można: tworzyć bazy i tabele, dodawać, modyfikować i usuwać dane, wyszukiwać informacje przy użyciu zapytań, kontrolować dostęp użytkowników, zarządzać relacjami między tabelami. SQL jest językiem deklaratywnym — oznacza to, że mówimy co chcemy zrobić, a nie jak baza danych ma to zrobić. Przykładowo, zamiast opisywać krok po kroku sposób przeszukiwania danych, po prostu wydajemy polecenie: SELECT * FROM users WHERE wiek > 25; Baza sama decyduje o najwydajniejszym sposobie wykonania tego zapytania.</p>
+            </div>
+            <div class="page">
+                <p class="text-base text-gray-700">1.4 Instalacja i uruchomienie MySQL Aby rozpocząć pracę z MySQL, potrzebujesz zainstalowanego serwera MySQL oraz narzędzia do obsługi zapytań. Najczęściej wybierane opcje to: MySQL Server + MySQL Workbench - oficjalne narzędzia od Oracle, XAMPP lub MAMP - pakiety zawierające MySQL, PHP i Apache, idealne dla początkujących, Docker - dla osób, które chcą uruchomić MySQL w kontenerze. Po instalacji możesz uruchomić MySQL Workbench i połączyć się z lokalnym serwerem (zazwyczaj localhost na porcie 3306).</p>
+            </div>
+            <div class="page">
+                <p class="text-base text-gray-700">1.5 Podstawowe pojęcia w MySQL Oto kilka terminów, które warto znać: Database (baza danych) - zbiór tabel. Table (tabela) - struktura przechowująca dane w wierszach i kolumnach. Row (wiersz) - pojedynczy rekord. Column (kolumna) - pole określające typ danych (np. TEXT, INT, DATE). Primary Key (klucz główny) - unikalny identyfikator rekordu. Foreign Key (klucz obcy) - odniesienie do innej tabeli, tworzące relację.</p>
+            </div>
+            <div class="page">
+                <p class="text-base text-gray-700">1.6 Przykłady praktyczne 1.6.1 Tworzenie nowej bazy danych CREATE DATABASE szkola; To polecenie tworzy nową bazę danych o nazwie szkola. 1.6.2 Wybór bazy do pracy USE szkola; Od tego momentu wszystkie polecenia będą dotyczyć wybranej bazy. 1.6.3 Tworzenie tabeli CREATE TABLE uczniowie ( id INT AUTO_INCREMENT PRIMARY KEY, imie VARCHAR(50), nazwisko VARCHAR(50), wiek INT ); Ta komenda tworzy tabelę uczniowie z kolumnami id, imie, nazwisko i wiek. 1.6.4 Dodawanie danych INSERT INTO uczniowie (imie, nazwisko, wiek) VALUES ('Anna', 'Nowak', 18), ('Michał', 'Kowalski', 19), ('Ewa', 'Lis', 17); 1.6.5 Odczytywanie danych SELECT * FROM uczniowie; Zwraca wszystkie rekordy z tabeli. 1.6.6 Filtrowanie wyników SELECT * FROM uczniowie WHERE wiek > 17; Wyświetli tylko uczniów starszych niż 17 lat.</p>
+            </div>
+            <div class="page">
+                <p class="text-base text-gray-700">1.7 Podsumowanie W tym rozdziale poznałeś podstawowe pojęcia dotyczące MySQL, jego przeznaczenie i znaczenie w świecie baz danych. Dowiedziałeś się, czym są tabele, rekordy i zapytania SQL oraz jak wykonać pierwsze kroki w pracy z serwerem MySQL. W kolejnych rozdziałach nauczysz się bardziej zaawansowanych operacji, takich jak tworzenie relacji między tabelami, używanie funkcji SQL oraz optymalizacja zapytań.</p>
+            </div>
             <div id="mini-menu" class="mt-4">
                 <button id="go_left">← Poprzednia</button>
                 <button id="go_right">Następna →</button>
