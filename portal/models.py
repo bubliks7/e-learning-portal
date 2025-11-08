@@ -22,10 +22,6 @@ class Kursy(models.Model):
     dluzszyOpis = models.TextField(null=True, blank=True)
     autor = models.ForeignKey(Uzytkownicy, on_delete=models.CASCADE, related_name='kursy')
     data_utworzenia = models.DateTimeField(auto_now_add=True)
-    strona_1 = models.TextField()
-    strona_2 = models.TextField()
-    strona_3 = models.TextField()
-    strona_4 = models.TextField()
     def __str__(self):
         return self.tytul
 

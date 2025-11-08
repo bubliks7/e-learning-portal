@@ -11,3 +11,10 @@ class Enrollment(models.Model):
 
     def __str__(self):
         return f"{self.uzytkownik.imie} zapisany na {self.kurs.tytul}"
+
+class coursesContent(models.Model):
+    strona_1 = models.TextField()
+    strona_2 = models.TextField()
+    strona_3 = models.TextField()
+    strona_4 = models.TextField()
+    
