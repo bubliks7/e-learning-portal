@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    {% comment %} <nav>
+    <nav>
         <h2><a href="/">Portal</a></h2>
         <div class="menu-toggle" id="mobile-menu-btn">
             <span></span>
@@ -34,62 +34,20 @@
             </form></li>
             <li><a href="/accound"><i class="fas fa-user"></i></a></li>
         </ul>
-    </nav> {% endcomment %}
-
-        <nav class="bg-white shadow-md">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-between items-center h-16">
-        
-                <div class="flex-shrink-0">
-                    <a href="/" class="text-xl font-bold text-gray-800">Portal</a>
-                </div>
-
-                <div class="hidden md:flex space-x-4 items-center">
-                    <a href="/" class="text-gray-700 hover:text-blue-600"><i class="fa-solid fa-house"></i></a>
-                    <a href="/courses" class="text-gray-700 hover:text-blue-600">Kursy</a>
-                    <a href="{% url 'saved_courses:my_courses' %}" class="text-gray-700 hover:text-blue-600">Moje kursy</a>
-                    <a href="{% url 'users:login_view' %}" class="text-gray-700 hover:text-blue-600">Zaloguj</a>
-                    <a href="/register" class="text-gray-700 hover:text-blue-600">Zarejestruj</a>
-                    <form action="{% url 'users:logout_view' %}" method="POST" class="inline">
-                    {% csrf_token %}
-                    <button class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded">Wyloguj</button>
-                    </form>
-                    <a href="/account" class="text-gray-700 hover:text-blue-600"><i class="fas fa-user"></i></a>
-                </div>
-
-                <div class="md:hidden flex items-center">
-                    <button id="menu-btn" class="text-gray-700 focus:outline-none">
-                    <i class="fas fa-bars fa-lg"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-    <!-- Menu mobile -->
-    <div id="mobile-menu" class="hidden md:hidden bg-white">
-        <a href="/" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Strona główna</a>
-        <a href="/courses" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Kursy</a>
-        <a href="{% url 'saved_courses:my_courses' %}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Moje kursy</a>
-        <a href="{% url 'users:login_view' %}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Zaloguj</a>
-        <a href="/register" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Zarejestruj</a>
-        <form action="{% url 'users:logout_view' %}" method="POST" class="px-4 py-2">
-        {% csrf_token %}
-        <button class="w-full bg-red-500 hover:bg-red-600 text-white px-3 py-2 rounded">Wyloguj</button>
-        </form>
-        <a href="/account" class="block px-4 py-2 text-gray-700 hover:bg-gray-100"><i class="fas fa-user"></i> Konto</a>
-    </div>
     </nav>
     <main>
         {% block content %}
         {% endblock %}
     </main>
     <script>
-        const btn = document.getElementById('mobile-menu-btn');
-        const navLinks = document.querySelector('nav ul');
-        btn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const navUl = document.querySelector('nav ul');
+
+        menuBtn.addEventListener('click', () => {
+            navUl.classList.toggle('active');
         });
-    </script>
+</script>
+
 </body>
 
 </html>
