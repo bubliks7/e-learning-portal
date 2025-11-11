@@ -12,6 +12,10 @@
            background-color: #F4F4F4;
        }
 
+       nav {
+           position: relative;
+       }
+
        nav ul {
            display: flex;
            align-items: center;
