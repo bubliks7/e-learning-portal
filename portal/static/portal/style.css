@@ -12,47 +12,7 @@ body {
     background-color: #F4F4F4;
 }
 
-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 80px;
-    padding: 0 40px;
-}
-
-nav h2 {
-    color: rgb(0, 0, 0);
-    font-weight: 700;
-    margin-right: 6px;
-}
-
-nav ul {
-    display: flex;
-}
-
-nav ul li {
-    list-style: none;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #000000;
-    font-weight: 600;
-    font-size: 1rem;
-    margin-right: 0.6rem;
-    transition: color 0.2s ease;
-}
-
-nav i:hover {
-    color: #007BFF;
-}
-
-nav ul li:last-child a {
-    margin: 0;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
+/* RESET */
 * {
     padding: 0;
     margin: 0;
@@ -65,22 +25,26 @@ body {
     background-color: #F4F4F4;
 }
 
+/* NAVBAR */
 nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 80px;
     padding: 0 40px;
+    position: relative;
+    /* dla menu absolutnego */
 }
 
 nav h2 {
-    color: rgb(0, 0, 0);
+    color: #000;
     font-weight: 700;
     margin-right: 6px;
 }
 
 nav ul {
     display: flex;
+    list-style: none;
 }
 
 nav ul li {
@@ -89,7 +53,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #000000;
+    color: #000;
     font-weight: 600;
     font-size: 1rem;
     margin-right: 0.6rem;
@@ -104,6 +68,7 @@ nav ul li:last-child a {
     margin: 0;
 }
 
+/* HAMBURGER MENU */
 .menu-toggle {
     display: none;
     /* domyślnie ukryty na desktop */
@@ -112,15 +77,37 @@ nav ul li:last-child a {
     color: #000;
 }
 
+/* PRZYCISK WYLOGUJ */
+.logout-btn {
+    background-color: #007BFF;
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.logout-btn:hover {
+    background-color: #0056b3;
+}
+
+/* RESPONSYWNOŚĆ */
 @media screen and (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+        /* hamburger widoczny na mobile */
+    }
+
     nav ul {
         position: absolute;
         top: 80px;
         left: 0;
         width: 100%;
-        background-color: #fff;
         flex-direction: column;
         align-items: center;
+        background-color: #fff;
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease-in-out;
@@ -132,14 +119,17 @@ nav ul li:last-child a {
         margin: 15px 0;
     }
 
-    .menu-toggle {
-        display: block;
-        /* widoczny hamburger na mobile */
-    }
-
     nav ul.active {
         max-height: 500px;
         /* rozwinięte menu */
+    }
+}
+
+/* MAŁE TELEFONY */
+@media screen and (max-width: 480px) {
+    nav ul li a {
+        font-size: 1.1rem;
+        padding: 10px 0;
     }
 }
 
