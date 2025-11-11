@@ -17,7 +17,7 @@
                 <h3 class="text-2xl font-semibold mb-2">{{ course.opis }}</h3>
                 <p class="text-base text-gray-700">{{ course.dluzszyOpis }}</p>
             </div>
-
+            {% if course.pk == 3 %}
             <div id="course-1" class="course-container">
                 <div class="page">
                     <p class="text-base text-gray-700">1.1 Czym jest MySQL? MySQL to jeden z najpopularniejszych systemów zarządzania relacyjnymi bazami danych (ang. Relational Database Management System - RDBMS). Jego głównym zadaniem jest przechowywanie, organizowanie i udostępnianie danych w sposób uporządkowany, dzięki czemu można nimi łatwo zarządzać oraz analizować je przy użyciu języka SQL (Structured Query Language). MySQL został opracowany w połowie lat 90. i jest obecnie rozwijany przez firmę Oracle. Jego popularność wynika z kilku kluczowych zalet: jest darmowy (w wersji Community Edition), wydajny i stabilny, łatwy w użyciu, nawet dla początkujących, działa na różnych systemach operacyjnych (Windows, Linux, macOS), współpracuje z wieloma językami programowania (np. PHP, Python, Java). MySQL jest wykorzystywany zarówno w małych projektach, jak i w dużych serwisach internetowych. Przykłady firm korzystających z MySQL to m.in. Facebook, YouTube czy Twitter.</p>
@@ -41,12 +41,14 @@
                 <div class="page">
                     <p class="text-base text-gray-700">1.7 Podsumowanie W tym rozdziale poznałeś podstawowe pojęcia dotyczące MySQL, jego przeznaczenie i znaczenie w świecie baz danych. Dowiedziałeś się, czym są tabele, rekordy i zapytania SQL oraz jak wykonać pierwsze kroki w pracy z serwerem MySQL. W kolejnych rozdziałach nauczysz się bardziej zaawansowanych operacji, takich jak tworzenie relacji między tabelami, używanie funkcji SQL oraz optymalizacja zapytań.</p>
                 </div>
-            </div>
 
-            <div id="mini-menu" class="mt-4">
-                <button id="go_left">← Poprzednia</button>
-                <button id="go_right">Następna →</button>
+                <div id="mini-menu" class="mt-4">
+                    <button id="go_left">← Poprzednia</button>
+                    <button id="go_right">Następna →</button>
+                </div>
             </div>
+            {% endif %}
+
         </div>
 
     </div>
