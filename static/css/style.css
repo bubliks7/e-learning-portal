@@ -12,41 +12,63 @@
            background-color: #F4F4F4;
        }
 
-       nav {
-           display: flex;
-           align-items: center;
-           justify-content: space-between;
-           height: 80px;
-           padding: 0 40px;
-       }
-
-       nav h2 {
-           color: rgb(0, 0, 0);
-           font-weight: 700;
-           margin-right: 6px;
-       }
-
        nav ul {
            display: flex;
+           align-items: center;
+           gap: 0.6rem;
        }
 
-       nav ul li {
-           list-style: none;
+       @media (max-width: 768px) {
+           nav {
+               padding: 0 20px;
+           }
+
+           nav ul {
+               flex-direction: column;
+               position: absolute;
+               top: 80px;
+               left: -100%;
+               width: 100%;
+               background-color: #fff;
+               transition: left 0.3s ease;
+               box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+               z-index: 10;
+           }
+
+           nav ul.active {
+               left: 0;
+           }
+
+           nav ul li {
+               margin: 15px 0;
+               text-align: center;
+           }
+
+           nav ul li a {
+               font-size: 1.2rem;
+           }
+
+           nav ul li a.tutaj {
+               margin-right: 0;
+           }
        }
 
-       nav ul li a {
-           text-decoration: none;
-           color: #000000;
-           font-weight: 600;
-           font-size: 1rem;
-           margin-right: 0.6rem;
-           transition: color 0.2s ease;
+       .menu-toggle {
+           display: none;
+           flex-direction: column;
+           cursor: pointer;
+           gap: 5px;
        }
 
-       nav i:hover {
-           color: #007BFF;
+       .menu-toggle span {
+           height: 3px;
+           width: 25px;
+           background: #000;
+           border-radius: 2px;
        }
 
-       nav ul li:last-child a {
-           margin: 0;
+       @media (max-width: 768px) {
+           .menu-toggle {
+               display: flex;
+           }
        }

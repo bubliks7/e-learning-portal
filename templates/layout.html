@@ -17,6 +17,11 @@
 <body>
     <nav>
         <h2><a href="/">Portal</a></h2>
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <ul>
             <li><a class="tutaj" href="/"><i class="fa-solid fa-house"></i></a></li>
             <li><a href="/courses">Kursy</a></li>
@@ -34,6 +39,14 @@
         {% block content %}
         {% endblock %}
     </main>
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const navLinks = document.querySelector('nav ul');
+
+        btn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
 </body>
 
 </html>
