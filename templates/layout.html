@@ -17,7 +17,7 @@
 <body>
     <nav>
         <h2><a href="/">Portal</a></h2>
-        <div class="menu-toggle" id="mobile-menu">
+        <div class="menu-toggle" id="mobile-menu-btn">
             <span></span>
             <span></span>
             <span></span>
@@ -42,7 +42,6 @@
     <script>
         const btn = document.getElementById('mobile-menu-btn');
         const navLinks = document.querySelector('nav ul');
-
         btn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
         });
