@@ -1,4 +1,3 @@
-const pages = document.querySelectorAll(".page");
 // let currentPage = 0;
 
 // function showPage(index) {
@@ -17,20 +16,25 @@ const pages = document.querySelectorAll(".page");
 
 // showPage(currentPage);
 
-let current = 0;
+document.querySelectorAll('.course-container').forEach(container => {
+    const pages = container.querySelectorAll('.page');
+    const leftBtn = container.querySelector('#go_left');
+    const rightBtn = container.querySelector('#go_right');
+    let current = 0;
 
-function showPage(n) {
-    pages.forEach((p, i) => p.style.display = (i === n) ? 'block' : 'none');
-}
+    function showPage(n) {
+        pages.forEach((p, i) => p.style.display = (i === n ? 'block' : 'none'));
+    }
 
-document.getElementById('go_left').onclick = () => {
-    if (current > 0) current--;
+    leftBtn.addEventListener('click', () => {
+        if (current > 0) current--;
+        showPage(current);
+    });
+
+    rightBtn.addEventListener('click', () => {
+        if (current < pages.length - 1) current++;
+        showPage(current);
+    });
+
     showPage(current);
-};
-
-document.getElementById('go_right').onclick = () => {
-    if (current < pages.length - 1) current++;
-    showPage(current);
-};
-
-showPage(current);
+});
