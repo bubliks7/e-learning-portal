@@ -51,43 +51,15 @@
            margin: 0;
        }
 
-       /* Hamburger menu */
        .menu-toggle {
            display: none;
-           flex-direction: column;
+           /* domyślnie ukryty na desktop */
+           font-size: 1.8rem;
            cursor: pointer;
-           gap: 5px;
+           color: #000;
        }
 
-       .menu-toggle span {
-           height: 3px;
-           width: 25px;
-           background-color: #000;
-           border-radius: 2px;
-       }
-
-       /* Przyciski */
-       .logout-btn {
-           background-color: #007BFF;
-           border: none;
-           color: white;
-           padding: 6px 12px;
-           border-radius: 5px;
-           cursor: pointer;
-           font-weight: 600;
-       }
-
-       .logout-btn:hover {
-           background-color: #0056b3;
-       }
-
-       /* Responsywne menu */
        @media screen and (max-width: 768px) {
-           nav {
-               padding: 0 20px;
-               position: relative;
-           }
-
            nav ul {
                position: absolute;
                top: 80px;
@@ -108,12 +80,12 @@
            }
 
            .menu-toggle {
-               display: flex;
+               display: block;
+               /* widoczny hamburger na mobile */
            }
 
-           /* po kliknięciu menu */
            nav ul.active {
                max-height: 500px;
-               /* dopasuj do ilości elementów */
+               /* rozwinięte menu */
            }
        }
