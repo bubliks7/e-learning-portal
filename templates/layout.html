@@ -14,6 +14,15 @@
     {% block extra_head %}{% endblock %}
 </head>
 
+<script>
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const navUl = document.querySelector('nav ul');
+
+    menuBtn.addEventListener('click', () => {
+        navUl.classList.toggle('active');
+    });
+</script>
+
 <body>
     <nav>
         <h2><a href="/">Portal</a></h2>
@@ -39,15 +48,6 @@
         {% block content %}
         {% endblock %}
     </main>
-    <script>
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const navUl = document.querySelector('nav ul');
-
-        menuBtn.addEventListener('click', () => {
-            navUl.classList.toggle('active');
-        });
-</script>
-
 </body>
 
 </html>

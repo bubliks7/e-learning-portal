@@ -51,6 +51,7 @@
            margin: 0;
        }
 
+       /* Hamburger menu */
        .menu-toggle {
            display: none;
            flex-direction: column;
@@ -65,7 +66,7 @@
            border-radius: 2px;
        }
 
-       /* Stylowanie przycisku wyloguj */
+       /* Przyciski */
        .logout-btn {
            background-color: #007BFF;
            border: none;
@@ -80,10 +81,11 @@
            background-color: #0056b3;
        }
 
-       /* Ukrycie menu na mobile i pokazanie przy kliknięciu */
+       /* Responsywne menu */
        @media screen and (max-width: 768px) {
            nav {
                padding: 0 20px;
+               position: relative;
            }
 
            nav ul {
@@ -109,22 +111,9 @@
                display: flex;
            }
 
-           /* Po kliknięciu pokazuje menu */
+           /* po kliknięciu menu */
            nav ul.active {
                max-height: 500px;
-               /* dostosuj w zależności od ilości elementów */
-           }
-       }
-
-       /* Ikony i linki */
-       nav ul li a i {
-           font-size: 1.2rem;
-       }
-
-       /* Linki w mobile mogą mieć większe paddingi */
-       @media screen and (max-width: 480px) {
-           nav ul li a {
-               font-size: 1.1rem;
-               padding: 10px 0;
+               /* dopasuj do ilości elementów */
            }
        }
