@@ -53,7 +53,6 @@
 
        .menu-toggle {
            display: none;
-           /* domyślnie ukryty na desktop */
            font-size: 1.8rem;
            cursor: pointer;
            color: #000;
