@@ -18,8 +18,8 @@
 
 document.querySelectorAll('.course-container').forEach(container => {
     const pages = container.querySelectorAll('.page');
-    const leftBtn = container.querySelector('#go_left');
-    const rightBtn = container.querySelector('#go_right');
+    const leftBtn = container.querySelector('.go_left');
+    const rightBtn = container.querySelector('.go_right');
     let current = 0;
 
     function showPage(n) {
