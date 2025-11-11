@@ -12,39 +12,22 @@ body {
     background-color: #F4F4F4;
 }
 
-/* RESET */
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
-body {
-    height: 100vh;
-    background-color: #F4F4F4;
-}
-
-/* NAVBAR */
 nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 80px;
     padding: 0 40px;
-    position: relative;
-    /* dla menu absolutnego */
 }
 
 nav h2 {
-    color: #000;
+    color: rgb(0, 0, 0);
     font-weight: 700;
     margin-right: 6px;
 }
 
 nav ul {
     display: flex;
-    list-style: none;
 }
 
 nav ul li {
@@ -53,7 +36,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #000;
+    color: #000000;
     font-weight: 600;
     font-size: 1rem;
     margin-right: 0.6rem;
@@ -66,71 +49,6 @@ nav i:hover {
 
 nav ul li:last-child a {
     margin: 0;
-}
-
-/* HAMBURGER MENU */
-.menu-toggle {
-    display: none;
-    /* domyślnie ukryty na desktop */
-    font-size: 1.8rem;
-    cursor: pointer;
-    color: #000;
-}
-
-/* PRZYCISK WYLOGUJ */
-.logout-btn {
-    background-color: #007BFF;
-    border: none;
-    color: white;
-    padding: 6px 12px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: 600;
-}
-
-.logout-btn:hover {
-    background-color: #0056b3;
-}
-
-/* RESPONSYWNOŚĆ */
-@media screen and (max-width: 768px) {
-
-    .menu-toggle {
-        display: block;
-        /* hamburger widoczny na mobile */
-    }
-
-    nav ul {
-        position: absolute;
-        top: 80px;
-        left: 0;
-        width: 100%;
-        flex-direction: column;
-        align-items: center;
-        background-color: #fff;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease-in-out;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-        z-index: 99;
-    }
-
-    nav ul li {
-        margin: 15px 0;
-    }
-
-    nav ul.active {
-        max-height: 500px;
-        /* rozwinięte menu */
-    }
-}
-
-/* MAŁE TELEFONY */
-@media screen and (max-width: 480px) {
-    nav ul li a {
-        font-size: 1.1rem;
-        padding: 10px 0;
-    }
 }
 
 header {
