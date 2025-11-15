@@ -7,7 +7,6 @@
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
     <link href="https://unpkg.com/tailwindcss@1.9.6/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     {% block static %}
 
     {% endblock %}
@@ -95,12 +94,10 @@
 
            .menu-toggle {
                display: block;
-               /* widoczny hamburger na mobile */
            }
 
            nav ul.active {
                max-height: 500px;
-               /* rozwinięte menu */
            }
        }
     </style>
