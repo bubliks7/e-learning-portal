@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'portal.apps.PortalConfig',
     'users',
     'courses',
+    'tests',
 ]
 
 MIDDLEWARE = [
