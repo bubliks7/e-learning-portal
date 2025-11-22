@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from django.urls import include, path
 from courses import views as course_views
+from tests import views
 
 urlpatterns = [
     path('', include('portal.urls')),
@@ -29,5 +30,5 @@ urlpatterns = [
     path('enroll/', include(('courses.urls', 'portal'), namespace='portal')),
     path('saved_courses/', include(('courses.urls', 'courses'), namespace='courses')),
     path('course_view/<int:pk>/', course_views.view_course, name='view_course'),
-    path('test/', include(('tests.urls', 'tests'), namespace='tests')),
+    path('test/<int:pk>/', views.test_view, name='test_view'),
 ]
