@@ -5,3 +5,6 @@ from portal.models import Testy
 def test_view(request, pk):
     test = get_object_or_404(Testy, pk=pk)
     return render(request, 'tests/test_view.html', {'test': test})
+
+def test_descrip(request):
+    return render(request, 'tests/desc.html')

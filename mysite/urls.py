@@ -31,4 +31,5 @@ urlpatterns = [
     path('saved_courses/', include(('courses.urls', 'courses'), namespace='courses')),
     path('course_view/<int:pk>/', course_views.view_course, name='view_course'),
     path('test/<int:pk>/', views.test_view, name='test_view'),
+    path('test/', views.test_descrip, name='test_descrip'),
 ]
