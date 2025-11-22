@@ -1,5 +1,5 @@
 from django.contrib import admin
-# from portal.models import Testy
+from portal.models import Testy
 # Register your models here.
 
-# admin.site.register(Testy)
+admin.site.register(Testy)
