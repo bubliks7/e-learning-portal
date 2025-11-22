@@ -1,7 +1,7 @@
 from django.shortcuts import get_object_or_404, render
 from django.contrib.auth.decorators import login_required
 from .models import Enrollment
-from portal.models import Kursy, Uzytkownicy
+from portal.models import Kursy, Uzytkownicy, Testy
 
 @login_required
 def enroll_course(request, kurs_id):
@@ -18,4 +18,10 @@ def my_courses(request):
 
 def view_course(request, pk):
     course = get_object_or_404(Kursy, pk=pk)
-    return render(request, 'courses/view_course.html', {'course': course})
+
+    test = course.testy.first()
+
+    return render(request, 'courses/view_course.html', {
+        'course': course,
+        'test': test,
+    })
