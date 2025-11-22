@@ -45,7 +45,7 @@
                 <div class="page">
                     <h3>Brawo! Ukończyłeś kurs {{ course.tytul }}</h3>
                     <p>Teraz rozwiąż test ze zdobytej wiedzy.</p>
-                    <a href="/test">Rozwiąż test</a>
+                    <a href="{% url 'tests:test_view' test.id %}">Rozwiąż test</a>
                 </div>
 
                 <div id="mini-menu" class="mt-4">
@@ -156,7 +156,7 @@
                 <div class="page">
                     <h3>Brawo! Ukończyłeś kurs {{ course.tytul }}</h3>
                     <p>Teraz rozwiąż test ze zdobytej wiedzy.</p>
-                    <a href="/test">Rozwiąż test</a>
+                    <a href="{% url 'tests:test_view' test.id %}">Rozwiąż test</a>
                 </div>
 
                 <div id="mini-menu" class="mt-4">
@@ -273,7 +273,7 @@
                 <div class="page">
                     <h3>Brawo! Ukończyłeś kurs {{ course.tytul }}</h3>
                     <p>Teraz rozwiąż test ze zdobytej wiedzy.</p>
-                    <a href="/test">Rozwiąż test</a>
+                    <a href="{% url 'tests:test_view' test.id %}">Rozwiąż test</a>
                 </div>
 
                 <div id="mini-menu" class="mt-4">
