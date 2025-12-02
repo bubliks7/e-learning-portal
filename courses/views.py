@@ -19,7 +19,7 @@ def my_courses(request):
 def view_course(request, pk):
     course = get_object_or_404(Kursy, pk=pk)
     test = course.testy.first()
-    lessons = Lekcja.objects.filter(course=course).order_by("kolejnosc")
+    lessons = Lekcja.objects.filter(kurs=course).order_by("order")
     return render(request, 'courses/view_course.html', {
         'course': course,
         'test': test,
