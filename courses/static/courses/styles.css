@@ -1,4 +1,4 @@
-.course-content {
+#course-content {
     max-width: 900px;
     margin: 0 auto;
     padding: 20px 30px;
@@ -7,14 +7,14 @@
     font-size: 18px;
 }
 
-.course-content h1,
-.course-content h2,
-.course-content h3 {
+#course-content h1,
+#course-content h2,
+#course-content h3 {
     text-align: center;
     margin-top: 30px;
 }
 
-.course-content p,
-.course-content li {
+#course-content p,
+#course-content li {
     margin-bottom: 12px;
 }

@@ -14,8 +14,8 @@
 
         {% for lesson in lessons %}
             <div class="page">
-                <h2 class="text-2xl font-semibold">{{ lesson.tytul }}</h2>
-                <div class="course-content">
+                <h2>{{ lesson.tytul }}</h2>
+                <div>
                     {{ lesson.tresc|safe }}
                 </div>
             </div>
