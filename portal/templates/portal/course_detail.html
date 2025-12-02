@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Szczegóły kursu
+{% endblock %}
+
+{% block static %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'portal/kursy.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h2>Szegóły kursu</h2>
+        {{ course.tytul }}
+        {{ course.opis }}
+
+        {% if user.is_authenticated %}
+        <form action="{% url 'saved_courses:enroll_course' course.id %}" method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary">Zapisz się na kurs</button>
+        </form>
+        {% else %}
+        <p><a href="/users/login/">Zaloguj się</a>, aby zapisać się na kurs.</p>
+        {% endif %}
+{% endblock %}

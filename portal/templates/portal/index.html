@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Strona główna
+{% endblock %}
+
+{% block static %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'portal/style.css' %}">
+{% endblock %}
+
+{% block content %}
+    <header>
+        <h1>Portal e-learningowy</h1>
+        <a href="{% url 'course_list' %}">Zobacz wszystkie Kursy</a>
+    </header>
+    <section class="new_courses">
+        <h2>Najnowsze kursy</h2>
+        <div class="courses-container">
+            {% for course in new_courses %}
+            <div class="course-card">
+                <h2>{{ course.tytul }}</h2>
+                <p>{{ course.opis }}</p>
+                <a class="btn" href="{% url 'course_detail' course.pk %}">Zapisz się</a>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

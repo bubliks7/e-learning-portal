@@ -1,0 +1,302 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    kurs sql
+{% endblock %}
+
+{% block static %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'portal/style.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="flex items-center justify-center min-h-screen">
+        <div class="max-w-xl text-center">
+            <div class="page">
+                <h1 class="text-4xl font-bold mb-4">{{ course.tytul }}</h1>
+                <h3 class="text-2xl font-semibold mb-2">{{ course.opis }}</h3>
+                <p class="text-base text-gray-700">{{ course.dluzszyOpis }}</p>
+            </div>
+            {% if course.pk == 4 %}
+            <div id="course-1" class="course-container">
+                <div class="page">
+                    <p class="text-base text-gray-700">1.1 Czym jest MySQL? MySQL to jeden z najpopularniejszych systemów zarządzania relacyjnymi bazami danych (ang. Relational Database Management System - RDBMS). Jego głównym zadaniem jest przechowywanie, organizowanie i udostępnianie danych w sposób uporządkowany, dzięki czemu można nimi łatwo zarządzać oraz analizować je przy użyciu języka SQL (Structured Query Language). MySQL został opracowany w połowie lat 90. i jest obecnie rozwijany przez firmę Oracle. Jego popularność wynika z kilku kluczowych zalet: jest darmowy (w wersji Community Edition), wydajny i stabilny, łatwy w użyciu, nawet dla początkujących, działa na różnych systemach operacyjnych (Windows, Linux, macOS), współpracuje z wieloma językami programowania (np. PHP, Python, Java). MySQL jest wykorzystywany zarówno w małych projektach, jak i w dużych serwisach internetowych. Przykłady firm korzystających z MySQL to m.in. Facebook, YouTube czy Twitter.</p>
+                </div>
+
+                <div class="page">
+                    <p class="text-base text-gray-700">1.2 Czym jest baza danych? Baza danych to zorganizowany zbiór informacji, które można łatwo przetwarzać, wyszukiwać i aktualizować. Można ją porównać do cyfrowego archiwum lub arkusza kalkulacyjnego, w którym dane są zapisywane w tabelach. Każda tabela składa się z: kolumn (fields) - które określają typ danych, np. imię, nazwisko, wiek, wierszy (rows) - które reprezentują konkretne rekordy, np. dane jednego użytkownika. Przykład prostej tabeli users: id imię nazwisko wiek 1 Anna Nowak 28 2 Michał Kowalski 34 3 Katarzyna Wiśniewska 22</p>
+                </div>
+                <div class="page">
+                    <p class="text-base text-gray-700">1.3 Czym jest SQL? SQL (Structured Query Language) to język służący do komunikacji z bazą danych. Za jego pomocą można: tworzyć bazy i tabele, dodawać, modyfikować i usuwać dane, wyszukiwać informacje przy użyciu zapytań, kontrolować dostęp użytkowników, zarządzać relacjami między tabelami. SQL jest językiem deklaratywnym — oznacza to, że mówimy co chcemy zrobić, a nie jak baza danych ma to zrobić. Przykładowo, zamiast opisywać krok po kroku sposób przeszukiwania danych, po prostu wydajemy polecenie: SELECT * FROM users WHERE wiek > 25; Baza sama decyduje o najwydajniejszym sposobie wykonania tego zapytania.</p>
+                </div>
+                <div class="page">
+                    <p class="text-base text-gray-700">1.4 Instalacja i uruchomienie MySQL Aby rozpocząć pracę z MySQL, potrzebujesz zainstalowanego serwera MySQL oraz narzędzia do obsługi zapytań. Najczęściej wybierane opcje to: MySQL Server + MySQL Workbench - oficjalne narzędzia od Oracle, XAMPP lub MAMP - pakiety zawierające MySQL, PHP i Apache, idealne dla początkujących, Docker - dla osób, które chcą uruchomić MySQL w kontenerze. Po instalacji możesz uruchomić MySQL Workbench i połączyć się z lokalnym serwerem (zazwyczaj localhost na porcie 3306).</p>
+                </div>
+                <div class="page">
+                    <p class="text-base text-gray-700">1.5 Podstawowe pojęcia w MySQL Oto kilka terminów, które warto znać: Database (baza danych) - zbiór tabel. Table (tabela) - struktura przechowująca dane w wierszach i kolumnach. Row (wiersz) - pojedynczy rekord. Column (kolumna) - pole określające typ danych (np. TEXT, INT, DATE). Primary Key (klucz główny) - unikalny identyfikator rekordu. Foreign Key (klucz obcy) - odniesienie do innej tabeli, tworzące relację.</p>
+                </div>
+                <div class="page">
+                    <p class="text-base text-gray-700">1.6 Przykłady praktyczne 1.6.1 Tworzenie nowej bazy danych CREATE DATABASE szkola; To polecenie tworzy nową bazę danych o nazwie szkola. 1.6.2 Wybór bazy do pracy USE szkola; Od tego momentu wszystkie polecenia będą dotyczyć wybranej bazy. 1.6.3 Tworzenie tabeli CREATE TABLE uczniowie ( id INT AUTO_INCREMENT PRIMARY KEY, imie VARCHAR(50), nazwisko VARCHAR(50), wiek INT ); Ta komenda tworzy tabelę uczniowie z kolumnami id, imie, nazwisko i wiek. 1.6.4 Dodawanie danych INSERT INTO uczniowie (imie, nazwisko, wiek) VALUES ('Anna', 'Nowak', 18), ('Michał', 'Kowalski', 19), ('Ewa', 'Lis', 17); 1.6.5 Odczytywanie danych SELECT * FROM uczniowie; Zwraca wszystkie rekordy z tabeli. 1.6.6 Filtrowanie wyników SELECT * FROM uczniowie WHERE wiek > 17; Wyświetli tylko uczniów starszych niż 17 lat.</p>
+                </div>
+                <div class="page">
+                    <p class="text-base text-gray-700">1.7 Podsumowanie W tym rozdziale poznałeś podstawowe pojęcia dotyczące MySQL, jego przeznaczenie i znaczenie w świecie baz danych. Dowiedziałeś się, czym są tabele, rekordy i zapytania SQL oraz jak wykonać pierwsze kroki w pracy z serwerem MySQL. W kolejnych rozdziałach nauczysz się bardziej zaawansowanych operacji, takich jak tworzenie relacji między tabelami, używanie funkcji SQL oraz optymalizacja zapytań.</p>
+                </div>
+
+                <div class="page">
+                    <h3>Brawo! Ukończyłeś kurs {{ course.tytul }}</h3>
+                    <p>Teraz rozwiąż test ze zdobytej wiedzy.</p>
+                    {% if test %}
+                        <a href="{% url 'tests:test_view' test.id %}">Rozwiąż test</a>
+                    {% else %}
+                        <p>Brak testu dla tego kursu.</p>
+                    {% endif %}
+                </div>
+
+                <div id="mini-menu" class="mt-4">
+                    <button id="go_left">← Poprzednia</button>
+                    <button id="go_right">Następna →</button>
+                </div>
+            </div>
+            {% endif %}
+
+
+            {% if course.pk == 3 %}
+            <div id="course-2" class="course-container">
+                <div class="page">
+                    <p class="text-base text-gray-700">1.1 Czym jest sztuczna inteligencja (AI)?
+                        Sztuczna inteligencja (ang. Artificial Intelligence, w skrócie AI) to dziedzina informatyki zajmująca się tworzeniem systemów, które potrafią wykonywać zadania wymagające ludzkiej inteligencji. Obejmuje to m.in. rozumienie języka naturalnego, rozpoznawanie obrazów, uczenie się na podstawie danych, podejmowanie decyzji czy planowanie działań.
+                        W najprostszych słowach — AI to zdolność maszyn do uczenia się i podejmowania inteligentnych decyzji.
+                        AI spotykamy dziś praktycznie wszędzie:
+                        w asystentach głosowych (np. Alexa, Siri, Google Assistant),
+                        w systemach rekomendacji (Netflix, YouTube, Spotify),
+                        w samochodach autonomicznych,
+                        w analizie danych i medycynie,
+                        w narzędziach do generowania obrazów i tekstu (np. ChatGPT, DALL·E, Midjourney).</p>
+                </div>
+
+                <div class="page">
+                    <p class="text-base text-gray-700">1.2 Krótka historia AI
+                        Historia AI sięga lat 50. XX wieku, kiedy naukowcy po raz pierwszy zaczęli zastanawiać się, czy maszyny mogą myśleć.
+                        Kilka ważnych momentów:
+                        1950 – Alan Turing publikuje artykuł „Computing Machinery and Intelligence”, w którym opisuje Test Turinga – metodę oceny, czy maszyna potrafi „myśleć jak człowiek”.
+                        1956 – John McCarthy organizuje konferencję w Dartmouth, uznawaną za narodziny AI jako dziedziny nauki.
+                        1980–2000 – rozwój systemów ekspertowych i uczenia maszynowego.
+                        po 2010 roku – gwałtowny rozwój sztucznych sieci neuronowych i tzw. głębokiego uczenia (Deep Learning), który zrewolucjonizował AI.
+                        Dzięki mocy współczesnych komputerów i ogromnym zbiorom danych, AI dziś potrafi rozpoznawać twarze, tłumaczyć języki, generować muzykę i tworzyć obrazy.
+                    </p>
+                </div>
+                <div class="page">
+                    <p class="text-base text-gray-700">1.3 Główne dziedziny sztucznej inteligencji
+                        Sztuczna inteligencja to szerokie pojęcie. Obejmuje wiele poddziedzin, z których najważniejsze to:
+                        Uczenie maszynowe (Machine Learning) – systemy uczą się na podstawie danych, zamiast być ręcznie programowane.
+                        Głębokie uczenie (Deep Learning) – wykorzystuje sztuczne sieci neuronowe, inspirowane budową ludzkiego mózgu.
+                        Przetwarzanie języka naturalnego (NLP) – analiza i generowanie ludzkiego języka (np. tłumaczenia, chatboty).
+                        Wizja komputerowa (Computer Vision) – rozpoznawanie i interpretacja obrazów i wideo.
+                        Robotyka – integracja AI z urządzeniami fizycznymi, które potrafią się poruszać i reagować na otoczenie.
+                    </p>
+                </div>
+                <div class="page">
+                    <p class="text-base text-gray-700">1.4 Jak działa AI?
+                        W uproszczeniu działanie AI można opisać w trzech krokach:
+                        Zbieranie danych – system potrzebuje dużych ilości informacji, np. zdjęć, tekstów, nagrań dźwiękowych lub wyników badań.
+                        Uczenie się (trening) – algorytmy analizują dane i uczą się rozpoznawać wzorce.
+                        Podejmowanie decyzji lub generowanie wyników – po nauczeniu się system potrafi samodzielnie odpowiadać, klasyfikować, przewidywać lub tworzyć treści.
+                        Przykład:
+                        Jeśli trenujemy model AI, by rozpoznawał koty na zdjęciach, pokazujemy mu tysiące zdjęć kotów i innych zwierząt. Z czasem AI nauczy się odróżniać kota od psa, nawet na nowych, wcześniej nieznanych obrazach.</p>
+                </div>
+                <div class="page">
+                    <p class="text-base text-gray-700">1.5 Zastosowania sztucznej inteligencji
+                        AI ma ogromny wpływ na wiele dziedzin życia. Oto kilka przykładów:
+                        Medycyna – analiza zdjęć rentgenowskich, przewidywanie chorób, personalizacja leczenia.
+                        Finanse – wykrywanie oszustw, analiza ryzyka inwestycyjnego.
+                        Marketing – analiza zachowań klientów, rekomendacje produktów.
+                        Edukacja – inteligentne systemy nauczania i indywidualne plany nauki.
+                        Sztuka i kreatywność – generowanie muzyki, obrazów, filmów i tekstów.</p>
+                </div>
+                <div class="page">
+                    <p class="text-base text-gray-700">1.6 Praktyka: proste przykłady AI
+                        1.6.1 Przykład 1 – Klasyfikacja danych
+                        W języku Python można stworzyć prosty model uczący się na podstawie danych.
+                        Poniżej przykład klasyfikatora, który „uczy się” rozpoznawać owoce na podstawie ich cech (masa i kolor):
+                        from sklearn.tree import DecisionTreeClassifier
+                        # Dane treningowe
+                        cechy = [[150, 1], [170, 1], [140, 0], [130, 0]]  # [waga, kolor]
+                        etykiety = ["jabłko", "jabłko", "pomarańcza", "pomarańcza"]
+                        # Tworzenie i trenowanie modelu
+                        model = DecisionTreeClassifier()
+                        model.fit(cechy, etykiety)
+                        # Przewidywanie
+                        wynik = model.predict([[160, 1]])
+                        print(wynik)  # prawdopodobnie "jabłko"
+                        Ten prosty przykład pokazuje, jak AI „uczy się” zależności między danymi wejściowymi (cechy) a wyjściowymi (etykiety).
+
+                        1.6.2 Przykład 2 – Generowanie tekstu z użyciem modelu językowego
+                        Nowoczesne modele, takie jak GPT (Generative Pre-trained Transformer), potrafią generować tekst w języku naturalnym.
+                        Na przykład:
+                        w aplikacjach czatowych odpowiadają na pytania użytkownika,
+                        w marketingu generują opisy produktów,
+                        w edukacji – tworzą testy, quizy lub tłumaczenia.
+                        Takie modele są trenowane na miliardach zdań i uczą się struktury języka, dzięki czemu potrafią pisać w sposób naturalny i spójny.</p>
+                </div>
+                <div class="page">
+                    <p class="text-base text-gray-700">1.7 Zalety i wyzwania AI
+                        Zalety:
+                        Automatyzacja żmudnych zadań,
+                        Lepsza analiza dużych ilości danych,
+                        Personalizacja usług,
+                        Wspieranie decyzji biznesowych i naukowych.
+                        Wyzwania:
+                        Brak pełnej zrozumiałości algorytmów (czarna skrzynka),
+                        Potencjalne błędy lub uprzedzenia w danych,
+                        Kwestie etyczne i prywatności,
+                        Obawy o wpływ AI na rynek pracy.</p>
+                </div>
+                <div class="page">
+                    <p class="text-base text-gray-700">1.8 Podsumowanie
+                        W tym rozdziale poznałeś podstawy sztucznej inteligencji – czym jest, jak działa i jakie ma zastosowania. Zrozumiałeś różnicę między AI, uczeniem maszynowym a głębokim uczeniem. Widziałeś też kilka prostych przykładów praktycznych pokazujących, jak maszyna może „uczyć się” i podejmować decyzje.
+                        W kolejnych rozdziałach nauczysz się, jak samodzielnie tworzyć proste modele AI, trenować je na danych oraz analizować wyniki ich działania.</p>
+                </div>
+
+                <div class="page">
+                    <h3>Brawo! Ukończyłeś kurs {{ course.tytul }}</h3>
+                    <p>Teraz rozwiąż test ze zdobytej wiedzy.</p>
+                    {% if test %}
+                        <a href="{% url 'tests:test_view' test.id %}">Rozwiąż test</a>
+                    {% else %}
+                        <p>Brak testu dla tego kursu.</p>
+                    {% endif %}
+                </div>
+
+                <div id="mini-menu" class="mt-4">
+                    <button id="go_left">← Poprzednia</button>
+                    <button id="go_right">Następna →</button>
+                </div>
+            </div>
+            {% endif %}
+
+
+            {% if course.pk == 5 %}
+            <div id="course-3" class="course-container">
+                <div class="page">
+                    <p class="text-base text-gray-700">1.1 Czym jest poziom B2?
+                        Poziom B2 według Europejskiego Systemu Opisu Kształcenia Językowego (CEFR) oznacza poziom średnio zaawansowany wyższy (Upper-Intermediate).
+                        Osoba na tym poziomie potrafi:
+                        rozumieć główne myśli złożonych tekstów, także o tematyce specjalistycznej,
+                        komunikować się swobodnie i spontanicznie z native speakerami,
+                        pisać szczegółowe teksty, eseje, e-maile i raporty,
+                        używać języka elastycznie i skutecznie w życiu codziennym, pracy i nauce.
+                        W tym kursie nauczysz się doskonalić swoje umiejętności językowe — zarówno gramatykę i słownictwo, jak i mówienie, pisanie, czytanie oraz rozumienie ze słuchu.</p>
+                </div>
+
+                <div class="page">
+                    <p class="text-base text-gray-700">1.2 Struktura kursu
+                        Kurs składa się z kilku rozdziałów, z których każdy skupia się na innej umiejętności lub zagadnieniu.
+                        W kolejnych częściach znajdziesz m.in.:
+                        Gramatykę na poziomie B2 – m.in. czasy złożone, tryby warunkowe, mowa zależna,
+                        Słownictwo tematyczne – praca, podróże, edukacja, zdrowie, technologia,
+                        Ćwiczenia komunikacyjne – jak mówić naturalnie i pewnie,
+                        Pisanie – e-maile formalne, eseje, raporty,
+                        Rozumienie tekstu i ze słuchu – strategie i przykłady.
+                    </p>
+                </div>
+                <div class="page">
+                    <p class="text-base text-gray-700">1.3 Przypomnienie podstawowych zasad języka angielskiego
+                        Zanim przejdziemy do bardziej zaawansowanych struktur, warto odświeżyć kilka kluczowych zasad:
+                        1.3.1 Budowa zdania
+                        Każde zdanie w języku angielskim składa się z trzech głównych części:
+                        Podmiot (subject) – kto/co wykonuje czynność,
+                        Orzeczenie (verb) – czynność,
+                        Dopełnienie (object) – na kim/czym czynność jest wykonywana.
+                        Przykład:
+                        ➡️ She (subject) reads (verb) books (object).
+                        ➡️ Ona czyta książki.
+                        1.3.2 Szyk wyrazów
+                        W języku angielskim szyk jest bardzo ważny. Najczęściej obowiązuje kolejność:
+                        Subject + Verb + Object
+                        np. I like coffee. (Lubię kawę.)
+                        Przestawienie kolejności może całkowicie zmienić znaczenie zdania.
+                        1.3.3 Czas Present Simple i Present Continuous
+                        Present Simple – używamy do nawyków, rutyny i faktów:
+                        ➡️ I work from Monday to Friday.
+                        ➡️ She plays tennis every weekend.
+                        Present Continuous – używamy do czynności trwających teraz lub planów na przyszłość:
+                        ➡️ I am studying English right now.
+                        ➡️ We are meeting tomorrow.
+                    </p>
+                </div>
+                <div class="page">
+                    <p class="text-base text-gray-700">1.4 Czasowniki modalne (Modal Verbs)
+                        Czasowniki modalne pomagają wyrażać możliwość, konieczność, obowiązek lub pozwolenie.
+                        Do najważniejszych należą: can, could, may, might, must, should, have to.
+                        Przykłady:
+                        You should study more. – Powinieneś więcej się uczyć.
+                        Can I open the window? – Czy mogę otworzyć okno?
+                        He must be tired. – On musi być zmęczony.</p>
+                </div>
+                <div class="page">
+                    <p class="text-base text-gray-700">1.5 Słownictwo na start – poznaj nowe zwroty
+                        Na poziomie B2 warto rozszerzać słownictwo, używając bardziej precyzyjnych i idiomatycznych wyrażeń.
+                        Angielski	Polski	Przykład użycia
+                        to figure out	zrozumieć, rozgryźć coś	I can't figure out this problem.
+                        to take part in	brać udział w	She took part in the competition.
+                        on purpose	celowo	He broke it on purpose.
+                        as soon as possible (ASAP)	tak szybko, jak to możliwe	Send me the report ASAP.
+                        to make up one's mind	zdecydować się	Have you made up your mind yet?</p>
+                </div>
+                <div class="page">
+                    <p class="text-base text-gray-700">1.6 Praktyka: krótkie ćwiczenia
+                        Ćwiczenie 1: Uzupełnij zdania czasownikiem w odpowiedniej formie
+                        She ___ (work) as a teacher.
+                        We ___ (study) for our exams right now.
+                        I ___ (can) speak English fluently.
+                        They ___ (go) to London last year.
+                        ✅ Odpowiedzi:
+                        works
+                        are studying
+                        can
+                        went
+                        Ćwiczenie 2: Połącz zdania z odpowiednim tłumaczeniem
+                        Zdanie angielskie	Tłumaczenie
+                        1. I’m looking forward to meeting you.	a) Uczę się angielskiego od pięciu lat.
+                        2. I have been learning English for five years.	b) Nie mogę się doczekać spotkania z tobą.
+                        ✅ Odpowiedzi:
+                        1 → b
+                        2 → a</p>
+                </div>
+                <div class="page">
+                    <p class="text-base text-gray-700">1.7 Wskazówki do nauki na poziomie B2
+                        Ucz się całych zwrotów, a nie pojedynczych słówek.
+                        Słuchaj podcastów lub oglądaj seriale po angielsku (z napisami angielskimi).
+                        Prowadź dziennik po angielsku – codziennie kilka zdań.
+                        Powtarzaj trudne struktury, np. conditional sentences i reported speech.
+                        Staraj się mówić jak najczęściej – nawet samemu do siebie!</p>
+                </div>
+                <div class="page">
+                    <p class="text-base text-gray-700">1.8 Podsumowanie
+                        W tym rozdziale przypomniałeś sobie podstawowe struktury gramatyczne, zapoznałeś się z przykładowym słownictwem i wykonałeś kilka ćwiczeń praktycznych.
+                        Od teraz będziesz rozwijać swoje umiejętności językowe w kierunku płynności – zarówno w mowie, jak i w piśmie.
+                        W kolejnym rozdziale skupimy się na czasach przeszłych (Past Tenses) i ich zastosowaniu w mowie codziennej i formalnej.</p>
+                </div>
+
+                <div class="page">
+                    <h3>Brawo! Ukończyłeś kurs {{ course.tytul }}</h3>
+                    <p>Teraz rozwiąż test ze zdobytej wiedzy.</p>
+                    {% if test %}
+                        <a href="{% url 'tests:test_view' test.id %}">Rozwiąż test</a>
+                    {% else %}
+                        <p>Brak testu dla tego kursu.</p>
+                    {% endif %}
+                </div>
+
+                <div id="mini-menu" class="mt-4">
+                    <button id="go_left">← Poprzednia</button>
+                    <button id="go_right">Następna →</button>
+                </div>
+            </div>
+            {% endif %}
+
+        </div>
+
+    </div>
+    <script src="{% static 'courses/script.js' %}"></script>
+{% endblock %}

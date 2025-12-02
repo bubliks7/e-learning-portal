@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background-color: #F4F4F4;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    padding: 0 40px;
+}
+
+nav h2 {
+    color: rgb(0, 0, 0);
+    font-weight: 700;
+    margin-right: 6px;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-right: 0.6rem;
+    transition: color 0.2s ease;
+}
+
+nav i:hover {
+    color: #007BFF;
+}
+
+nav ul li:last-child a {
+    margin: 0;
+}
+
+header {
+    text-align: center;
+}
+
+.new_courses {
+    padding: 40px 20px;
+    border-top: 1px solid #eee;
+}
+
+.new_courses h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.new-courses-layout {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.courses-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.course-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.course-card:hover {
+    transform: scale(1.03);
+}
+
+.btn {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 900px) {
+    .new-courses-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .courses-container {
+        grid-template-columns: 1fr;
+    }
+
+    .courses-text-box {
+        text-align: center;
+    }
+}
+
+header a {
+    font-weight: bold;
+    padding: 5px;
+}

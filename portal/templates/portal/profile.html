@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Profil użytkownika
+{% endblock %}
+
+{% block static %}
+    {% load static %}
+    <link href="https://unpkg.com/tailwindcss@1.9.6/dist/tailwind.min.css" rel="stylesheet">
+{% endblock %}
+{% block content %}
+   <div class="min-h-screen flex items-center justify-center">
+    <div class="bg-white p-8 rounded-2xl space-y-2 shadow-md">
+        <h1 class="text-2xl font-bold mb-6 text-gray-800">Profil użytkownika</h1>
+        <p>Login: {{ user.username }}</p>
+        <p>Imię: {{ user.first_name }}</p>
+        <p>Nazwisko: {{ user.last_name }}</p>
+        <p>Email: {{ user.email }}</p>
+        <p>Status: {{ uzytkownik.status_uzytkownika }}</p>
+        <p><a href="{% url 'saved_courses:my_courses' %}">Moje kursy</a></p>
+     </div>
+    </div>
+{% endblock %}

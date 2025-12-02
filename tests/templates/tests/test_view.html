@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Test
+{% endblock %}
+
+{% block static %}
+    {% load static %}
+
+{% endblock %}
+{% block content %}
+    <div>
+        <h1>{{ test.nazwa }}</h1>
+        <h2>próg zdawalności: {{ test.prog_zdawalnosci }}</h2>
+    </div>
+{% endblock %}

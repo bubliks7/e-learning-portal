@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Kursy
+{% endblock %}
+
+{% block static %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'portal/kursy.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h1>Dostępne kursy</h1>
+    <div class="courses-container">
+        {% for course in courses %}
+            <div class="course-card">
+                <h2>{{ course.tytul }}</h2>
+                <p>{{ course.opis }}</p>
+                <a class="btn" href="{% url 'course_detail' course.pk %}">Zobacz więcej</a>
+            </div>
+        {% empty %}
+            <p>Brak dostępnych kursów</p>
+        {% endfor %}
+        </div>
+{% endblock %}

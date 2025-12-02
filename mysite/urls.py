@@ -16,7 +16,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.urls import include, path
+from courses import views as course_views
+from tests import views
 
 urlpatterns = [
+    path('', include('portal.urls')),
+    path('courses/', include('portal.urls')),
     path('admin/', admin.site.urls),
+    path('users/', include('users.urls')),
+    path('accound/', include('portal.urls')),
+    path('register/', include('portal.urls')),
+    path('enroll/', include(('courses.urls', 'portal'), namespace='portal')),
+    path('saved_courses/', include(('courses.urls', 'courses'), namespace='courses')),
+    path('course_view/<int:pk>/', course_views.view_course, name='view_course'),
+    path('tests/', include('tests.urls', namespace='tests')),
 ]
