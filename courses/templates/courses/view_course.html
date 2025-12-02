@@ -37,6 +37,14 @@
             font-family: 'Courier New', monospace;
             overflow-x: auto;
         }
+        .testBtn{
+            padding: 20px;
+            background-color: #007BFF;
+            border-radius: 10px;
+        }
+        .testBtn:hover{
+            background-color: #005dc0ff;
+        }
 
     </style>
 {% endblock %}
@@ -52,7 +60,7 @@
                 </div>
             </div>
             {% if test %}
-                <a href="{% url 'tests:test_view' test.id %}">Rozwiąż test</a>
+                <a class="testBtn" href="{% url 'tests:test_view' test.id %}">Rozwiąż test</a>
             {% else %}
                 <p>Brak testu dla tego kursu.</p>
             {% endif %}

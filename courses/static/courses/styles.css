@@ -18,4 +18,5 @@
 #course-content p,
 #course-content li {
     margin-bottom: 12px;
+    background-color: blue;
 }
