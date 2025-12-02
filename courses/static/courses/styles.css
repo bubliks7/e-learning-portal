@@ -1,4 +1,4 @@
-/* #course-content {
+#course-content {
     max-width: 900px;
     margin: 0 auto;
     padding: 20px 30px;
@@ -6,19 +6,9 @@
     line-height: 1.7;
     font-size: 18px;
     text-align: center;
-} */
+}
 
-/* .page {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px 30px;
-    border-radius: 10px;
-    line-height: 1.7;
-    font-size: 18px;
-    text-align: center;
-} */
-
-/* #course-content h1,
+#course-content h1,
 #course-content h2,
 #course-content h3 {
     text-align: center;
@@ -28,4 +18,4 @@
 #course-content p,
 #course-content li {
     margin-bottom: 12px;
-} */
+}

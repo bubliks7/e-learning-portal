@@ -6,7 +6,29 @@
 
 {% block static %}
     {% load static %}
-    <link rel="stylesheet" href="{% static 'courses/style.css' %}">
+    <style>
+        #course-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px 30px;
+            border-radius: 10px;
+            line-height: 1.7;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        #course-content h1,
+        #course-content h2,
+        #course-content h3 {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        #course-content p,
+        #course-content li {
+            margin-bottom: 12px;
+        }
+    </style>
 {% endblock %}
 
 {% block content %}
