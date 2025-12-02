@@ -23,5 +23,6 @@ def view_course(request, pk):
     return render(request, 'courses/view_course.html', {
         'course': course,
         'test': test,
+        'lessons': lessons,
     })
 
