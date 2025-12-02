@@ -51,6 +51,11 @@
                     {{ lesson.tresc|safe }}
                 </div>
             </div>
+            {% if test %}
+                <a href="{% url 'tests:test_view' test.id %}">Rozwiąż test</a>
+            {% else %}
+                <p>Brak testu dla tego kursu.</p>
+            {% endif %}
         {% endfor %}
     </div>
 {% endblock %}
