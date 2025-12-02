@@ -5,6 +5,7 @@
     border-radius: 10px;
     line-height: 1.7;
     font-size: 18px;
+    text-align: center;
 }
 
 #course-content h1,
@@ -17,12 +18,4 @@
 #course-content p,
 #course-content li {
     margin-bottom: 12px;
-}
-
-.page {
-    margin-bottom: 40px;
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
 }
