@@ -9,8 +9,10 @@
     <link rel="stylesheet" href="{% static 'tests/style.css' %}">
 {% endblock %}
 {% block content %}
-    <div class="panel">
-        <h1>{{ test.nazwa }}</h1>
-        <h2>próg zdawalności: {{ test.prog_zdawalnosci }}</h2>
+    <div class="container">
+        <div class="panel">
+            <h1>{{ test.nazwa }}</h1>
+            <h2>próg zdawalności: {{ test.prog_zdawalnosci }}</h2>
+        </div>
     </div>
 {% endblock %}
