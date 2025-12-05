@@ -8,6 +8,7 @@
 
 .panel {
     display: flex;
+    justify-content: center;
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 12px;
