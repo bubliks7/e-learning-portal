@@ -6,6 +6,8 @@
 }
 
 .panel {
+    display: flex;
+    flex-direction: column;
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 12px;
