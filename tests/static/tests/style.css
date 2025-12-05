@@ -12,6 +12,7 @@
     border: 1px solid #ddd;
     border-radius: 12px;
     padding: 16px;
+    margin: 20px;
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
@@ -26,4 +27,21 @@ form {
     flex-direction: column;
     justify-content: center;
     border-left: 1px solid rgb(82, 82, 82);
+    margin: 10px;
+}
+
+input {
+    border: 1px solid rgb(82, 82, 82);
+}
+
+input:active {
+    background-color: #a7a7a7;
+}
+
+button {
+    border: 1px solid rgb(82, 82, 82);
+}
+
+button:hover {
+    background-color: #a7a7a7;
 }
