@@ -10,8 +10,10 @@
 {% endblock %}
 {% block content %}
     <div class="container">
+        {% if test %}
             <h1>{{ test.nazwa }}</h1>
             <h2>próg zdawalności: {{ test.prog_zdawalnosci }}</h2>
+        {% endif %}
         <div class="panel">
             {% comment %} <pre>
                 Wybierz poprawną odpowiedź:
@@ -36,10 +38,10 @@
                 b) are
                 c) be
             </pre> {% endcomment %}
-
+        {% if pytanie %}
             {{ pytanie.tresc }}
             {{ pytanie.punkty }}
-
+        {% endif %}
             <form>
                 <input type="text" placeholder="Odp 1: ">
                 <input type="text" placeholder="Odp 2: ">

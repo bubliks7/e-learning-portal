@@ -26,7 +26,7 @@
     padding-right: 20px;
 }
 
-form {
+.panel form {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -34,21 +34,21 @@ form {
     padding: 15px;
 }
 
-input {
+.panel input {
     border: 1px solid rgb(161, 161, 161);
     border-radius: 8px;
     margin: 5px;
 }
 
-input:active {
+.panel input:active {
     background-color: #a7a7a7;
 }
 
-button {
+.panel button {
     border: 1px solid rgb(161, 161, 161);
     border-radius: 8px;
 }
 
-button:hover {
+.panel button:hover {
     background-color: #a7a7a7;
 }
