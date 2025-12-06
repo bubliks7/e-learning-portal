@@ -13,7 +13,7 @@
             <h1>{{ test.nazwa }}</h1>
             <h2>próg zdawalności: {{ test.prog_zdawalnosci }}</h2>
         <div class="panel">
-            <pre>
+            {% comment %} <pre>
                 Wybierz poprawną odpowiedź:
 
                 She ___ a teacher.
@@ -35,7 +35,10 @@
                 a) is
                 b) are
                 c) be
-            </pre>
+            </pre> {% endcomment %}
+
+            {{ pytanie.tresc }}
+            {{ pytanie.punkty }}
 
             <form>
                 <input type="text" placeholder="Odp 1: ">
