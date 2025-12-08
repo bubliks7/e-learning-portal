@@ -1,0 +1,54 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.panel {
+    display: flex;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 16px;
+    margin: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.panel:hover {
+    transform: scale(1.03);
+}
+
+.panel pre {
+    padding-right: 20px;
+}
+
+.panel form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-left: 1px solid rgb(161, 161, 161);
+    padding: 15px;
+}
+
+.panel input {
+    border: 1px solid rgb(161, 161, 161);
+    border-radius: 8px;
+    margin: 5px;
+}
+
+.panel input:active {
+    background-color: #a7a7a7;
+}
+
+.panel button {
+    border: 1px solid rgb(161, 161, 161);
+    border-radius: 8px;
+}
+
+.panel button:hover {
+    background-color: #a7a7a7;
+}

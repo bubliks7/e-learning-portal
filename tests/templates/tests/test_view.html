@@ -6,11 +6,27 @@
 
 {% block static %}
     {% load static %}
-
+    <link rel="stylesheet" href="{% static 'tests/style.css' %}">
 {% endblock %}
 {% block content %}
-    <div>
-        <h1>{{ test.nazwa }}</h1>
-        <h2>próg zdawalności: {{ test.prog_zdawalnosci }}</h2>
+    <div class="container">
+        {% if test %}
+            <h1>{{ test.nazwa }}</h1>
+            <h2>próg zdawalności: {{ test.prog_zdawalnosci }}</h2>
+        {% endif %}
+        <div class="panel">
+
+        {% if pytanie %}
+            {{ pytanie.tresc }}
+            {{ pytanie.punkty }}
+        {% endif %}
+            <form>
+                <input type="text" placeholder="Odp 1: ">
+                <input type="text" placeholder="Odp 2: ">
+                <input type="text" placeholder="Odp 3: ">
+                <input type="text" placeholder="Odp 4: ">
+                <button>Potwierdź</button>
+            </form>
+        </div>
     </div>
 {% endblock %}

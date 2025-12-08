@@ -74,3 +74,15 @@ class Odpowiedzi(models.Model):
     pytanie = models.ForeignKey(Pytania, on_delete=models.CASCADE, related_name='odpowiedzi')
     tresc = models.TextField()
     poprawna = models.BooleanField(default=False)
+
+class Lekcja(models.Model):
+    kurs = models.ForeignKey(Kursy, related_name="lekcje", on_delete=models.CASCADE)
+    tytul = models.CharField(max_length=255)
+    tresc = models.TextField()
+    order = models.PositiveIntegerField(default=1)
+
+    class Meta:
+        ordering = ["order"]
+
+    def __str__(self):
+        return f"{self.order}. {self.tytul}"
