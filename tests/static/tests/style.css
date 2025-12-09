@@ -52,3 +52,9 @@
 .panel button:hover {
     background-color: #a7a7a7;
 }
+
+.pyt{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

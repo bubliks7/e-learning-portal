@@ -15,11 +15,12 @@
             <h2>próg zdawalności: {{ test.prog_zdawalnosci }}</h2>
         {% endif %}
         <div class="panel">
-
-        {% if pytanie %}
-            {{ pytanie.tresc }}
-            {{ pytanie.punkty }}
-        {% endif %}
+            <div class="pyt">
+                {% if pytanie %}
+                     {{ pytanie.tresc }}
+                    {{ pytanie.punkty }}
+                {% endif %}
+            </div>
             <form>
                 <input type="text" placeholder="Odp 1: ">
                 <input type="text" placeholder="Odp 2: ">

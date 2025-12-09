@@ -9,7 +9,3 @@ def test_view(request, pk):
         'test': test,
         'pytanie': pytanie,
         })
-
-# def question(request, pk):
-#     pytanie = get_object_or_404(Pytania, pk=pk)
-#     return render(request, 'tests/test_view.html', {'pytanie': pytanie})
