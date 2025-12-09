@@ -18,18 +18,16 @@
             <div class="pyt">
                 {% if pytanie %}
                     {{ pytanie.tresc }}
-                    <!-- {{ pytanie.punkty }} -->
+                    <br>
+                    {{ pytanie.punkty }}
                 {% endif %}
             </div>
-            <div class="odp">
+            <!-- <div class="odp">
                 {% if odpowiedz %}
                     {{ odpowiedz.id }}
                      {{ odpowiedz.tresc }}
-                    <!-- {{ odpowiedz.odp2 }}
-                    {{ odpowiedz.odp3 }}
-                    {{ odpowiedz.odp4 }} -->
                 {% endif %}
-            </div>
+            </div> -->
             <form>
                 <input type="text" placeholder="Odp 1: ">
                 <input type="text" placeholder="Odp 2: ">
