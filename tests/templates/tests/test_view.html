@@ -23,9 +23,10 @@
             </div>
             <div class="odp">
                 {% if odpowiedzi %}
-                    {{ odpowiedzi.id }}
-                    {{ odpowiedzi.tresc }}
-                {% endif %}
+                    {% for odp in odpowiedzi %}
+                        <label>
+                            input type="radio" name="odpowiedz" value="{{ odp.id }}"> {{ odp.tresc }}
+                        </label> <br>
                 <p>punktów za pytanie: {{ pytanie.punkty }}</p>
             </div>
             <form>
