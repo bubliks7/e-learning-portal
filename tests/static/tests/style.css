@@ -53,8 +53,7 @@
     background-color: #a7a7a7;
 }
 
-.pyt{
+.odp{
     display: flex;
     flex-direction: column;
-    justify-content: center;
 }
