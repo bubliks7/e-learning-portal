@@ -19,15 +19,15 @@
                 {% if pytanie %}
                     {{ pytanie.tresc }}
                     <br>
-                    <p>punktów za pytanie: {{ pytanie.punkty }}</p>
                 {% endif %}
             </div>
-            <!-- <div class="odp">
+            <div class="odp">
                 {% if odpowiedz %}
                     {{ odpowiedz.id }}
                      {{ odpowiedz.tresc }}
                 {% endif %}
-            </div> -->
+                <p>punktów za pytanie: {{ pytanie.punkty }}</p>
+            </div>
             <form>
                 <input type="text" placeholder="Odp 1: ">
                 <input type="text" placeholder="Odp 2: ">
