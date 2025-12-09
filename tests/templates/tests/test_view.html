@@ -25,7 +25,7 @@
                 {% if odpowiedzi %}
                     {% for odp in odpowiedzi %}
                         <label>
-                            input type="radio" name="odpowiedz" value="{{ odp.id }}"> {{ odp.tresc }}
+                            <input type="radio" name="odpowiedz" value="{{ odp.id }}"> {{ odp.tresc }}
                         </label> <br>
                     {% endfor %}
                 {% endif %}
