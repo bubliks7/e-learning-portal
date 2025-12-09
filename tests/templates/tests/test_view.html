@@ -27,6 +27,8 @@
                         <label>
                             input type="radio" name="odpowiedz" value="{{ odp.id }}"> {{ odp.tresc }}
                         </label> <br>
+                    {% endfor %}
+                {% endif %}
                 <p>punktów za pytanie: {{ pytanie.punkty }}</p>
             </div>
             <form>
