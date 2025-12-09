@@ -4,8 +4,12 @@ from portal.models import Testy, Pytania, Odpowiedzi
 
 def test_view(request, pk):
     test = get_object_or_404(Testy, pk=pk)
-    return render(request, 'tests/test_view.html', {'test': test})
-
-def question(request, pk):
     pytanie = get_object_or_404(Pytania, pk=pk)
-    return render(request, 'tests/test_view.html', {'pytanie': pytanie})
+    return render(request, 'tests/test_view.html', {
+        'test': test,
+        'pytanie': pytanie,
+        })
+
+# def question(request, pk):
+#     pytanie = get_object_or_404(Pytania, pk=pk)
+#     return render(request, 'tests/test_view.html', {'pytanie': pytanie})
