@@ -5,7 +5,8 @@ from portal.models import Testy, Pytania, Odpowiedzi
 def test_view(request, pk):
     test = get_object_or_404(Testy, pk=pk)
 
-    pytanie = Pytania.objects.filter(test=test)
+    pytanie = test.Pytania.all().prefetch_related('odpowiedzi')
+
     if not pytanie:
         return render(request, 'tests/test_view.html', {
             'test': test,
@@ -18,4 +19,4 @@ def test_view(request, pk):
         'test': test,
         'pytanie': pytanie,
         'odpowiedzi': odpowiedzi,
-        })
+    })

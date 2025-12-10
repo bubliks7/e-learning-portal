@@ -23,7 +23,7 @@
             </div> <br>
             <div class="odp">
                 {% if odpowiedzi %}
-                    {% for odp in odpowiedzi %}
+                    {% for odp in pytanie.odpowiedzi.all %}
                         <label for="odp">
                             <input type="radio" id="odp" name="odpowiedz" value="{{ odp.id }}"> {{ odp.tresc }}
                         </label> <br>
