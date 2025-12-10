@@ -24,21 +24,14 @@
             <div class="odp">
                 {% if odpowiedzi %}
                     {% for odp in odpowiedzi %}
-                        <label>
-                            <input type="radio" name="odpowiedz" value="{{ odp.id }}"> {{ odp.tresc }}
+                        <label for="odp">
+                            <input type="radio" id="odp" name="odpowiedz" value="{{ odp.id }}"> {{ odp.tresc }}
                         </label> <br>
                     {% endfor %}
                     <button>Potwierdź</button>
                 {% endif %}
                 <p>punktów za pytanie: {{ pytanie.punkty }}</p>
             </div>
-            <!-- <form>
-                <input type="text" placeholder="Odp 1: ">
-                <input type="text" placeholder="Odp 2: ">
-                <input type="text" placeholder="Odp 3: ">
-                <input type="text" placeholder="Odp 4: ">
-                <button>Potwierdź</button>
-            </form> -->
         </div>
     </div>
 {% endblock %}
