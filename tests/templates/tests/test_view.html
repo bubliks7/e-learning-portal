@@ -16,37 +16,22 @@
         {% endif %}
         <div class="panel">
             <div class="pyt">
-                <!-- {% if pytanie %}
+                {% if pytanie %}
                     {{ pytanie.tresc }}
                     <br>
-                {% endif %} -->
-            {% for pytanie in pytania %}
-                <h3>{{ pytanie.tresc }}</h3>
-
-                {% for odp in pytanie.odpowiedzi.all %}
-                    <label>
-                        <input type="radio" name="pytanie_{{ pytanie.id }}" value="{{ odp.id }}">
-                        {{ odp.tresc }}
-                    </label><br>
-                {% endfor %}
-
-                <hr>
-            {% endfor %}
-
+                {% endif %}
             </div> <br>
-            <!-- <div class="odp">
+            <div class="odp">
                 {% if odpowiedzi %}
-                    {% for odp in pytanie.odpowiedzi.all %}
-                        <label>
-                            <input type="radio" name="pytanie_{{ pytanie.id }}" value="{{ odp.id }}">
-                            {{ odp.tresc }}
-                        </label>
-                        <br>
+                    {% for odp in odpowiedzi %}
+                        <label for="odp">
+                            <input type="radio" id="odp" name="odpowiedz" value="{{ odp.id }}"> {{ odp.tresc }}
+                        </label> <br>
                     {% endfor %}
                     <button>Potwierdź</button>
                 {% endif %}
                 <p>punktów za pytanie: {{ pytanie.punkty }}</p>
-            </div> -->
+            </div>
         </div>
     </div>
 {% endblock %}
