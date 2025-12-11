@@ -5,17 +5,18 @@ from portal.models import Testy, Pytania, Odpowiedzi
 def test_view(request, pk):
     test = get_object_or_404(Testy, pk=pk)
 
-    pytanie = Pytania.objects.filter(test=test).all()
-    if not pytanie:
+    pytania = Pytania.objects.filter(test=test).prefetch_related('odpowiedzi')
+
+    if not pytania.exists():
         return render(request, 'tests/test_view.html', {
             'test': test,
             'error': 'Brak pytań w teście'
         })
 
-    odpowiedzi = Odpowiedzi.objects.filter(pytanie=pytanie)
+    # odpowiedzi = Odpowiedzi.objects.filter(pytanie=pytanie)
 
     return render(request, 'tests/test_view.html', {
         'test': test,
-        'pytanie': pytanie,
+        'pytania': pytania,
         'odpowiedzi': odpowiedzi,
         })
