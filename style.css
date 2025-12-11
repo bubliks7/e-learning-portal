@@ -33,9 +33,7 @@
 .panel pre {
     padding-right: 20px;
 }
-.pyt{
-    margin: 15px;
-}
+
 .panel form {
     display: flex;
     flex-direction: column;
