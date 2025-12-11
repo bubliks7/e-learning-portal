@@ -18,5 +18,5 @@ def test_view(request, pk):
     return render(request, 'tests/test_view.html', {
         'test': test,
         'pytania': pytania,
-        'odpowiedzi': odpowiedzi,
+        # 'odpowiedzi': odpowiedzi,
         })
