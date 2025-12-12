@@ -9,32 +9,6 @@
     <link rel="stylesheet" href="{% static 'tests/style.css' %}">
 {% endblock %}
 {% block content %}
-    <!-- <div class="container">
-        {% if test %}
-            <h1>{{ test.nazwa }}</h1>
-            <h2>próg zdawalności: {{ test.prog_zdawalnosci }}</h2>
-        {% endif %}
-        <div class="panel">
-            <div class="pyt">
-                {% if pytanie %}
-                    {{ pytanie.tresc }}
-                    <br>
-                {% endif %}
-            </div> <br>
-            <div class="odp">
-                {% if odpowiedzi %}
-                    {% for odp in odpowiedzi %}
-                        <label for="odp">
-                            <input type="radio" id="odp" name="odpowiedz" value="{{ odp.id }}"> {{ odp.tresc }}
-                        </label> <br>
-                    {% endfor %}
-                    <button>Potwierdź</button>
-                {% endif %}
-                <p>punktów za pytanie: {{ pytanie.punkty }}</p>
-            </div>
-        </div>
-    </div> -->
-
     <div class="container">
     <h1>{{ test.nazwa }}</h1>
     <h2>Próg zdawalności: {{ test.prog_zdawalnosci }}</h2>
@@ -57,6 +31,7 @@
                 </div>
             </div>
         {% endfor %}
+        <a href="#"><button type="submit">Prześlij wyniki</button></a>
     </div>
 </div>
 
