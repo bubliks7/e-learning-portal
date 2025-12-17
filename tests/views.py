@@ -13,10 +13,7 @@ def test_view(request, pk):
             'error': 'Brak pytań w teście'
         })
 
-    # odpowiedzi = Odpowiedzi.objects.filter(pytanie=pytanie)
-
     return render(request, 'tests/test_view.html', {
         'test': test,
         'pytania': pytania,
-        # 'odpowiedzi': odpowiedzi,
         })
