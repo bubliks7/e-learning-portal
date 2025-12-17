@@ -31,7 +31,7 @@
                 </div>
             </div>
         {% endfor %}
-        <a href="#"><button type="submit">Prześlij wyniki</button></a>
+        <a href="{% url 'tests:test_result' pk=test.id %}"><button class="wyslij" type="submit">Prześlij wyniki</button></a>
     </div>
 </div>
 
