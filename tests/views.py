@@ -35,4 +35,5 @@ def test_result(request, pk):
         'wszystkie': wszystkie,
         'poprawne': poprawne,
         'procent': procent,
+        'zaliczony': zaliczony,
     })
