@@ -5,5 +5,5 @@ app_name = "tests"
 
 urlpatterns = [
     path('test/<int:pk>/', views.test_view, name='test_view'),
-    # path('test/<int:test_pk>/question/<int:pk>/', views.question, name='question'),
+    path('results/<int:pk>/', views.test_result, name='test_result'),
 ]
