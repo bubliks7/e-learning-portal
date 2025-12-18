@@ -20,23 +20,29 @@ def test_view(request, pk):
 
 def test_result(request, pk):
     test = get_object_or_404(Testy, pk=pk)
-    pytania = Pytania.objects.filter(test=test).prefetch_related('odpowiedzi')
+    pytania = Pytania.objects.filter(test=test)
 
-    wszystkie = 0
+    wszystkie = pytania.count()
     poprawne = 0
 
-    for pytanie in pytania:
-        odp = pytanie.odpowiedzi.all()
-        wszystkie += odp.count()
-        poprawne += odp.filter(poprawna=True).count()
+    if request.method == 'POST':
+        for pytanie in pytania:
+            odpowiedz_id = request.POST.get(f'pytanie_{pytanie.id}')
 
-    procent = round((poprawne / wszystkie) * 100, 2) if wszystkie > 0 else 0
+            if odpowiedz_id:
+                if pytanie.odpowiedzi.filter(
+                    id=odpowiedz_id,
+                    poprawna = True
+                ).exists():
+                    poprawne += 1
+    
+    procent = (poprawne / wszystkie) * 100 if wszystkie > 0 else 0
     zaliczony = procent >= 50
 
     return render(request, 'tests/test_result.html', {
         'test': test,
         'wszystkie': wszystkie,
         'poprawne': poprawne,
-        'procent': procent,
+        'procent': round(procent, 2),
         'zaliczony': zaliczony,
     })
