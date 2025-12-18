@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="{% static 'tests/style.css' %}">
 {% endblock %}
 {% block content %}
-    <div class="container">
+<div class="container">
     <h1>{{ test.nazwa }}</h1>
     <h2>Próg zdawalności: {{ test.prog_zdawalnosci }}</h2>
 
-    <div class="panel">
+    <form action="{% url 'test_result' test.id %}"" method="post"></form>
         {% for pytanie in pytania %}
             <div class="pytanie-box">
                 <div class="pyt">
@@ -32,7 +32,7 @@
             </div>
         {% endfor %}
         <a href="{% url 'tests:test_result' pk=test.id %}"><button class="wyslij" type="submit">Prześlij wyniki</button></a>
-    </div>
+    </form>
 </div>
 
 {% endblock %}
